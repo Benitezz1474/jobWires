@@ -1,3 +1,7 @@
+import {sessionVerify} from "../sessionVerify.js";
+//valido que no existan sesiones, si existen lo redirijo a otro sitio
+sessionVerify("../CONTENT/BUSCA/busca.html");
+
 import {sendHTTPrequest,printHTTPrequest} from "../loginAndRegister.js";
 
 const form_login = document.getElementById("form_login");
