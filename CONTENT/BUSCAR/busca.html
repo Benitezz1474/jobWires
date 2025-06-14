@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Trabajo | TrabajoFácil</title>
+  <link rel="stylesheet" href="busca.css"/>
+</head>
+<body>
+   <!-- ========== CABECERA ========== -->
+  <header>
+    <div class="logo">TrabajoFácil</div>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+                <li><a href="index.html#empresas">Empresas</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="./CONTENT/CONFIGURACIONES/index.html" class="settings-link">C⚙nfig</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Ofertas de trabajo</h2>
+
+    <!-- FILTROS DE BÚSQUEDA -->
+    <form class="buscador" id="filtro-form" onsubmit="event.preventDefault(); filtrarOfertas();">
+      <input type="text" id="palabraClave" placeholder="Ej: Repartidor, Programador..." />
+      <select id="categoria">
+        <option value="">Todas las categorías</option>
+        <option value="tecnologia">Tecnología</option>
+        <option value="logistica">Logística</option>
+        <option value="ventas">Ventas</option>
+        <option value="servicios">Servicios</option>
+      </select>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- RESULTADOS -->
+    <section id="ofertas">
+      <div class="oferta" data-categoria="tecnologia">
+        <h3>Desarrollador Frontend</h3>
+        <p><strong>Empresa:</strong> SoftTech</p>
+        <p><strong>Ubicación:</strong> Montevideo, Uruguay</p>
+        <p>Buscamos un desarrollador con experiencia en HTML, CSS y JavaScript.</p>
+      </div>
+
+      <div class="oferta" data-categoria="logistica">
+        <h3>Repartidor con moto</h3>
+        <p><strong>Empresa:</strong> FastDelivery</p>
+        <p><strong>Ubicación:</strong> Canelones, Uruguay</p>
+        <p>Entrega de pedidos en zonas urbanas. Se necesita libreta de conducir.</p>
+      </div>
+
+      <div class="oferta" data-categoria="ventas">
+        <h3>Asesor Comercial</h3>
+        <p><strong>Empresa:</strong> ElectroMundo</p>
+        <p><strong>Ubicación:</strong> Las Piedras</p>
+        <p>Ventas en salón y atención al cliente. Experiencia previa deseable.</p>
+      </div>
+   
+  
+<div class="oferta" data-categoria="administracion">
+  <h3>Asistente Administrativo</h3>
+  <p><strong>Empresa:</strong> GestiónPlus</p>
+  <p><strong>Ubicación:</strong> Montevideo, Uruguay</p>
+  <p>Apoyo en tareas administrativas, manejo de documentación y atención telefónica.</p>
+</div>
+
+<div class="oferta" data-categoria="administracion">
+  <h3>Asistente Administrativo</h3>
+  <p><strong>Empresa:</strong> GestiónPlus</p>
+  <p><strong>Ubicación:</strong> Montevideo, Uruguay</p>
+  <p>Apoyo en tareas administrativas, manejo de documentación y atención telefónica.</p>
+</div>
+
+<div class="oferta" data-categoria="tecnologia">
+  <h3>Desarrollador Web</h3>
+  <p><strong>Empresa:</strong> Innovatech</p>
+  <p><strong>Ubicación:</strong> Punta del Este</p>
+  <p>Programación en JavaScript, HTML y CSS. Se valorará experiencia en frameworks modernos.</p>
+</div>
+
+<div class="oferta" data-categoria="salud">
+  <h3>Enfermero/a</h3>
+  <p><strong>Empresa:</strong> Clínica San José</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Atención y cuidado de pacientes. Requiere título y experiencia mínima 2 años.</p>
+</div>
+
+<div class="oferta" data-categoria="educacion">
+  <h3>Profesor de Inglés</h3>
+  <p><strong>Empresa:</strong> Academia Lingua</p>
+  <p><strong>Ubicación:</strong> Maldonado</p>
+  <p>Clases para adultos y jóvenes. Se necesita certificado de enseñanza y experiencia previa.</p>
+</div>
+<div class="oferta" data-categoria="comercio">
+  <h3>Vendedor/a Retail</h3>
+  <p><strong>Empresa:</strong> Tiendas Urbanas</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Atención al cliente, manejo de caja y stock. Buena presencia y habilidades comunicativas.</p>
+</div>
+<div class="oferta" data-categoria="logistica">
+  <h3>Chofer de Reparto</h3>
+  <p><strong>Empresa:</strong> TransLogística SRL</p>
+  <p><strong>Ubicación:</strong> Canelones</p>
+  <p>Reparto de mercadería en zona metropolitana. Libreta de conducir categoría C.</p>
+</div>
+
+<div class="oferta" data-categoria="administracion">
+  <h3>Asistente Administrativo</h3>
+  <p><strong>Empresa:</strong> ContabiPlus</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Gestión de archivos, atención telefónica y soporte contable.</p>
+</div>
+
+<div class="oferta" data-categoria="seguridad">
+  <h3>Guardia de Seguridad Nocturno</h3>
+  <p><strong>Empresa:</strong> SegurPro</p>
+  <p><strong>Ubicación:</strong> Rivera</p>
+  <p>Control de acceso, patrullaje interno y reporte de novedades. Disponibilidad para turnos rotativos.</p>
+</div>
+
+<div class="oferta" data-categoria="limpieza">
+  <h3>Operario de Limpieza</h3>
+  <p><strong>Empresa:</strong> CleanWorks</p>
+  <p><strong>Ubicación:</strong> Maldonado</p>
+  <p>Servicios de limpieza industrial y oficinas. Jornada parcial.</p>
+</div>
+
+<div class="oferta" data-categoria="marketing">
+  <h3>Community Manager</h3>
+  <p><strong>Empresa:</strong> Digital360</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Gestión de redes sociales, campañas y contenido. Conocimientos de diseño gráfico.</p>
+</div>
+
+<div class="oferta" data-categoria="ventas">
+  <h3>Ejecutivo de Ventas</h3>
+  <p><strong>Empresa:</strong> Muebles & Diseño</p>
+  <p><strong>Ubicación:</strong> Colonia</p>
+  <p>Atención personalizada y cierre de ventas. Experiencia en el rubro mueblería.</p>
+</div>
+
+<div class="oferta" data-categoria="finanzas">
+  <h3>Analista Contable</h3>
+  <p><strong>Empresa:</strong> Finanzas Globales</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Conciliaciones bancarias, balances y declaraciones fiscales. Manejo de Excel avanzado.</p>
+</div>
+
+<div class="oferta" data-categoria="construccion">
+  <h3>Oficial Albañil</h3>
+  <p><strong>Empresa:</strong> Constructora del Sur</p>
+  <p><strong>Ubicación:</strong> Durazno</p>
+  <p>Obra nueva y reformas. Experiencia comprobable y disponibilidad inmediata.</p>
+</div>
+
+<div class="oferta" data-categoria="informatica">
+  <h3>Técnico en Soporte Informático</h3>
+  <p><strong>Empresa:</strong> SysHelp</p>
+  <p><strong>Ubicación:</strong> Salto</p>
+  <p>Instalación y mantenimiento de hardware y software. Conocimiento en redes.</p>
+</div>
+
+<div class="oferta" data-categoria="legal">
+  <h3>Asistente Legal</h3>
+  <p><strong>Empresa:</strong> Estudio Jurídico Pérez & Asociados</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Redacción de escritos, seguimiento de expedientes. Estudiante de Derecho avanzado.</p>
+</div>
+
+<div class="oferta" data-categoria="gastronomia">
+  <h3>Cocinero/a</h3>
+  <p><strong>Empresa:</strong> Restaurante El Fogón</p>
+  <p><strong>Ubicación:</strong> Paysandú</p>
+  <p>Preparación de platos calientes. Experiencia en cocina tradicional y manejo de equipo.</p>
+</div>
+
+<div class="oferta" data-categoria="belleza">
+  <h3>Esteticista</h3>
+  <p><strong>Empresa:</strong> Spa Belleza Natural</p>
+  <p><strong>Ubicación:</strong> San José</p>
+  <p>Tratamientos faciales, depilación y masajes. Formación técnica en estética.</p>
+</div>
+
+<div class="oferta" data-categoria="produccion">
+  <h3>Operario de Producción</h3>
+  <p><strong>Empresa:</strong> Alimentos La Finca</p>
+  <p><strong>Ubicación:</strong> Florida</p>
+  <p>Empaque, etiquetado y control de calidad. Trabajo por turnos.</p>
+</div>
+
+<div class="oferta" data-categoria="callcenter">
+  <h3>Teleoperador/a</h3>
+  <p><strong>Empresa:</strong> ContactaYa</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Atención al cliente vía telefónica. Buen manejo verbal y orientación al servicio.</p>
+</div>
+
+<div class="oferta" data-categoria="agropecuario">
+  <h3>Peón Rural</h3>
+  <p><strong>Empresa:</strong> Estancia La Victoria</p>
+  <p><strong>Ubicación:</strong> Tacuarembó</p>
+  <p>Manejo de ganado, mantenimiento de instalaciones. Se ofrece alojamiento.</p>
+</div>
+
+<div class="oferta" data-categoria="educacion">
+  <h3>Maestro/a de Primaria</h3>
+  <p><strong>Empresa:</strong> Colegio San Francisco</p>
+  <p><strong>Ubicación:</strong> Rocha</p>
+  <p>Grado completo, planificación y seguimiento pedagógico. Título habilitante.</p>
+</div>
+
+<div class="oferta" data-categoria="diseno">
+  <h3>Diseñador/a Gráfico</h3>
+  <p><strong>Empresa:</strong> Creativa Estudio</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Diseño de piezas publicitarias para medios digitales. Manejo de Adobe Suite.</p>
+</div>
+
+<div class="oferta" data-categoria="moda">
+  <h3>Costurero/a</h3>
+  <p><strong>Empresa:</strong> Modas Rita</p>
+  <p><strong>Ubicación:</strong> Lavalleja</p>
+  <p>Confección y arreglos de prendas. Experiencia en máquinas industriales.</p>
+</div>
+
+<div class="oferta" data-categoria="turismo">
+  <h3>Guía Turístico</h3>
+  <p><strong>Empresa:</strong> AventurUruguay</p>
+  <p><strong>Ubicación:</strong> Artigas</p>
+  <p>Recorridos guiados, atención al visitante. Inglés básico requerido.</p>
+</div>
+
+<div class="oferta" data-categoria="energia">
+  <h3>Técnico en Energías Renovables</h3>
+  <p><strong>Empresa:</strong> EcoEnergia</p>
+  <p><strong>Ubicación:</strong> Treinta y Tres</p>
+  <p>Instalación de paneles solares y mantenimiento de sistemas fotovoltaicos.</p>
+</div>
+
+<div class="oferta" data-categoria="eventos">
+  <h3>Organizador de Eventos</h3>
+  <p><strong>Empresa:</strong> Fiesta Plena</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Planificación y coordinación de celebraciones. Trato con clientes y proveedores.</p>
+</div>
+
+<div class="oferta" data-categoria="transporte">
+  <h3>Conductor de Ómnibus</h3>
+  <p><strong>Empresa:</strong> InterBus</p>
+  <p><strong>Ubicación:</strong> Soriano</p>
+  <p>Viajes interdepartamentales. Libreta profesional vigente y experiencia comprobada.</p>
+</div>
+
+<div class="oferta" data-categoria="mantenimiento">
+  <h3>Encargado de Mantenimiento</h3>
+  <p><strong>Empresa:</strong> Torres del Este</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Supervisión de instalaciones, arreglos eléctricos y sanitarios menores.</p>
+</div>
+
+<div class="oferta" data-categoria="industria">
+  <h3>Tornero Mecánico</h3>
+  <p><strong>Empresa:</strong> Metalúrgica Sur</p>
+  <p><strong>Ubicación:</strong> San José</p>
+  <p>Fabricación de piezas según planos. Experiencia en torno convencional.</p>
+</div>
+
+<div class="oferta" data-categoria="deportes">
+  <h3>Profesor/a de Educación Física</h3>
+  <p><strong>Empresa:</strong> Gimnasio Vital</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Clases grupales y entrenamientos personalizados. Título habilitado.</p>
+</div>
+
+<div class="oferta" data-categoria="arte">
+  <h3>Profesor/a de Artes Plásticas</h3>
+  <p><strong>Empresa:</strong> Taller Creativo</p>
+  <p><strong>Ubicación:</strong> Canelones</p>
+  <p>Dibujo, pintura y escultura. Trabajo con niños y adolescentes.</p>
+</div>
+
+<div class="oferta" data-categoria="medios">
+  <h3>Editor/a de Video</h3>
+  <p><strong>Empresa:</strong> Producciones Prisma</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Edición de contenido audiovisual para redes. Uso de Premiere y After Effects.</p>
+</div>
+
+<div class="oferta" data-categoria="ambiental">
+  <h3>Inspector/a Ambiental</h3>
+  <p><strong>Empresa:</strong> EcoControl</p>
+  <p><strong>Ubicación:</strong> Río Negro</p>
+  <p>Monitoreo de residuos, control de emisiones. Formación técnica en medioambiente.</p>
+</div>
+
+<div class="oferta" data-categoria="investigacion">
+  <h3>Asistente de Laboratorio</h3>
+  <p><strong>Empresa:</strong> Biotec S.A.</p>
+  <p><strong>Ubicación:</strong> Montevideo</p>
+  <p>Análisis de muestras, registro de datos. Formación técnica en química o biología.</p>
+</div>
+
+<div class="oferta" data-categoria="hosteleria">
+  <h3>Recepcionista de Hotel</h3>
+  <p><strong>Empresa:</strong> Hotel Playa Hermosa</p>
+  <p><strong>Ubicación:</strong> Rocha</p>
+  <p>Atención al cliente, reservas y gestión administrativa. Inglés intermedio deseable.</p>
+</div>
+</section>
+</main>
+  <footer>
+    <p>&copy; 2025 TrabajoFácil. Todos los derechos reservados.</p>
+    <div class="contacto">
+      <p>Contacto: <strong>099134355</strong> | Email: <strong>lucasismaeldelpiano3@gmail.com</strong></p>
+      <p><a href="#" style="color: #fff;">¿Necesitás ayuda?</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function filtrarOfertas() {
+      const palabra = document.getElementById("palabraClave").value.toLowerCase();
+      const categoria = document.getElementById("categoria").value;
+      const ofertas = document.querySelectorAll(".oferta");
+
+      ofertas.forEach(oferta => {
+        const texto = oferta.textContent.toLowerCase();
+        const cat = oferta.getAttribute("data-categoria");
+
+        const coincidePalabra = palabra === "" || texto.includes(palabra);
+        const coincideCategoria = categoria === "" || cat === categoria;
+
+        if (coincidePalabra && coincideCategoria) {
+          oferta.style.display = "block";
+        } else {
+          oferta.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

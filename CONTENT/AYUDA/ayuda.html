@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - TrabajoPlus</title>
+    <link rel="stylesheet" href="ayuda.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="index.html">TrabajoPlus</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="index.html#empleos">Empleos</a></li>
+                <li><a href="index.html#empresas">Empresas</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Centro de Ayuda</h1>
+            <p>Encuentra respuestas a tus preguntas y aprende a usar TrabajoPlus al máximo</p>
+            
+            <div class="search-help">
+                <input type="text" id="helpSearch" placeholder="Buscar en la ayuda..." class="help-search-input">
+                <button class="help-search-btn">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <h2>Accesos Rápidos</h2>
+            <div class="quick-links-grid">
+                <div class="quick-link-card" onclick="scrollToSection('como-buscar')">
+                    <div class="quick-icon">🔍</div>
+                    <h3>Cómo Buscar Trabajo</h3>
+                    <p>Aprende a usar nuestro sistema de búsqueda</p>
+                </div>
+                <div class="quick-link-card" onclick="scrollToSection('crear-perfil')">
+                    <div class="quick-icon">👤</div>
+                    <h3>Crear Perfil</h3>
+                    <p>Guía para crear un perfil atractivo</p>
+                </div>
+                <div class="quick-link-card" onclick="scrollToSection('aplicar-empleos')">
+                    <div class="quick-icon">📝</div>
+                    <h3>Aplicar a Empleos</h3>
+                    <p>Proceso de aplicación paso a paso</p>
+                </div>
+                <div class="quick-link-card" onclick="scrollToSection('cuenta')">
+                    <div class="quick-icon">⚙️</div>
+                    <h3>Gestión de Cuenta</h3>
+                    <p>Administra tu cuenta y configuración</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <!-- Cómo buscar trabajo -->
+            <div class="faq-category" id="como-buscar">
+                <h3>🔍 Cómo Buscar Trabajo</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo puedo buscar empleos en TrabajoPlus?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para buscar empleos en TrabajoPlus:</p>
+                        <ol>
+                            <li>Ingresa palabras clave del trabajo que buscas en el campo "¿Qué trabajo buscas?"</li>
+                            <li>Especifica la ubicación deseada en el campo "¿Dónde?"</li>
+                            <li>Haz clic en "Buscar Empleo"</li>
+                            <li>Usa los filtros avanzados para refinar tu búsqueda</li>
+                            <li>Revisa los resultados y aplica a los empleos que te interesen</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué palabras clave debo usar para buscar?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Usa palabras clave específicas como:</p>
+                        <ul>
+                            <li><strong>Título del puesto:</strong> "Desarrollador", "Contador", "Vendedor"</li>
+                            <li><strong>Habilidades:</strong> "Excel", "Marketing Digital", "Atención al Cliente"</li>
+                            <li><strong>Industria:</strong> "Tecnología", "Finanzas", "Salud"</li>
+                            <li><strong>Nivel:</strong> "Junior", "Senior", "Gerente"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo funcionan los filtros de búsqueda?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Los filtros te ayudan a encontrar empleos más específicos:</p>
+                        <ul>
+                            <li><strong>Salario:</strong> Define un rango salarial mínimo y máximo</li>
+                            <li><strong>Tipo de empleo:</strong> Tiempo completo, medio tiempo, freelance</li>
+                            <li><strong>Experiencia:</strong> Sin experiencia, 1-3 años, 3-5 años, más de 5 años</li>
+                            <li><strong>Modalidad:</strong> Presencial, remoto, híbrido</li>
+                            <li><strong>Fecha de publicación:</strong> Últimas 24 horas, semana, mes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crear perfil -->
+            <div class="faq-category" id="crear-perfil">
+                <h3>👤 Crear y Optimizar tu Perfil</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo creo mi perfil en TrabajoPlus?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para crear tu perfil:</p>
+                        <ol>
+                            <li>Haz clic en "Registrarse" en la parte superior</li>
+                            <li>Completa tus datos básicos (nombre, email, teléfono)</li>
+                            <li>Agrega tu experiencia laboral más relevante</li>
+                            <li>Incluye tu formación académica</li>
+                            <li>Lista tus habilidades principales</li>
+                            <li>Sube una foto profesional</li>
+                            <li>Escribe un resumen profesional atractivo</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué debo incluir en mi resumen profesional?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tu resumen profesional debe incluir:</p>
+                        <ul>
+                            <li>Tu área de especialización</li>
+                            <li>Años de experiencia</li>
+                            <li>Logros más importantes</li>
+                            <li>Habilidades clave</li>
+                            <li>Objetivos profesionales</li>
+                            <li>Mantén un tono profesional pero cercano</li>
+                        </ul>
+                        <p><strong>Ejemplo:</strong> "Desarrollador Full Stack con 5 años de experiencia en React y Node.js. He liderado proyectos que aumentaron la eficiencia en un 40%. Busco oportunidades en startups tecnológicas."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplicar a empleos -->
+            <div class="faq-category" id="aplicar-empleos">
+                <h3>📝 Aplicar a Empleos</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo aplico a un empleo?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para aplicar a un empleo:</p>
+                        <ol>
+                            <li>Busca y selecciona el empleo que te interesa</li>
+                            <li>Lee cuidadosamente la descripción del puesto</li>
+                            <li>Verifica que cumples con los requisitos</li>
+                            <li>Haz clic en "Aplicar"</li>
+                            <li>Personaliza tu carta de presentación</li>
+                            <li>Adjunta tu CV actualizado</li>
+                            <li>Envía tu aplicación</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Puedo aplicar a múltiples empleos?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>¡Sí! Puedes aplicar a tantos empleos como desees. Recomendamos:</p>
+                        <ul>
+                            <li>Aplicar solo a empleos que realmente te interesen</li>
+                            <li>Personalizar cada aplicación</li>
+                            <li>Llevar un registro de tus aplicaciones</li>
+                            <li>Seguir el estado de cada aplicación</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gestión de cuenta -->
+            <div class="faq-category" id="cuenta">
+                <h3>⚙️ Gestión de Cuenta</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo cambio mi contraseña?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para cambiar tu contraseña:</p>
+                        <ol>
+                            <li>Inicia sesión en tu cuenta</li>
+                            <li>Ve a "Mi Perfil" > "Configuración"</li>
+                            <li>Selecciona "Cambiar Contraseña"</li>
+                            <li>Ingresa tu contraseña actual</li>
+                            <li>Ingresa tu nueva contraseña</li>
+                            <li>Confirma los cambios</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo configuro las notificaciones?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para configurar notificaciones:</p>
+                        <ol>
+                            <li>Ve a "Mi Perfil" > "Notificaciones"</li>
+                            <li>Selecciona qué tipos de notificaciones quieres recibir</li>
+                            <li>Elige la frecuencia (inmediata, diaria, semanal)</li>
+                            <li>Configura alertas de empleos por palabras clave</li>
+                            <li>Guarda tus preferencias</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="contact-support">
+        <div class="container">
+            <h2>¿Necesitas más ayuda?</h2>
+            <p>Si no encontraste la respuesta que buscabas, no dudes en contactarnos</p>
+            
+            <div class="support-options">
+                <div class="support-card">
+                    <div class="support-icon">💬</div>
+                    <h3>Chat en Vivo</h3>
+                    <p>Habla con nuestro equipo de soporte</p>
+                    <button class="support-btn" onclick="openChat()">Iniciar Chat</button>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Envíanos un email detallado</p>
+                    <button class="support-btn" onclick="sendEmail()">Enviar Email</button>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">📞</div>
+                    <h3>Teléfono</h3>
+                    <p>Llámanos directamente</p>
+                    <button class="support-btn" onclick="callSupport()">+598 99 123 456</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>TrabajoPlus</h3>
+                <p>Tu plataforma de confianza para encontrar las mejores oportunidades laborales.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="ayuda.html">Ayuda</a>
+                <a href="#">Para Empresas</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 TrabajoPlus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
