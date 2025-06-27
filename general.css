@@ -8,21 +8,22 @@
 body {
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #1e40af;
     overflow-x: hidden;
+    background-color: #ffffff;
 }
 
 /* ===== HEADER Y NAVEGACIÓN ===== */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+    color: #1e40af;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(191, 219, 254, 0.3);
 }
 
 .nav {
@@ -37,7 +38,7 @@ body {
 .logo {
     font-size: 2rem;
     font-weight: bold;
-    background: linear-gradient(45deg, #fff, #f0f8ff);
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -50,7 +51,7 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: #1e40af;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -59,13 +60,14 @@ body {
 }
 
 .nav-links a:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.7);
     transform: translateY(-2px);
+    color: #3b82f6;
 }
 
 /* ===== SECCIÓN HERO ===== */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -81,7 +83,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)" opacity="0.6"><animate attributeName="r" values="100;150;100" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23a)" opacity="0.4"><animate attributeName="r" values="80;120;80" dur="3s" repeatCount="indefinite"/></circle><circle cx="600" cy="700" r="120" fill="url(%23a)" opacity="0.5"><animate attributeName="r" values="120;170;120" dur="5s" repeatCount="indefinite"/></circle></svg>') center/cover;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.4)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)" opacity="0.8"><animate attributeName="r" values="100;150;100" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23a)" opacity="0.6"><animate attributeName="r" values="80;120;80" dur="3s" repeatCount="indefinite"/></circle><circle cx="600" cy="700" r="120" fill="url(%23a)" opacity="0.7"><animate attributeName="r" values="120;170;120" dur="5s" repeatCount="indefinite"/></circle></svg>') center/cover;
     animation: float 20s ease-in-out infinite;
 }
 
@@ -96,7 +98,7 @@ body {
 
 .hero-content {
     text-align: center;
-    color: white;
+    color: #1e40af;
     z-index: 2;
     position: relative;
     max-width: 800px;
@@ -107,7 +109,7 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
     animation: slideInUp 1s ease-out;
 }
 
@@ -126,6 +128,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 3rem;
     opacity: 0.9;
+    color: #3b82f6;
     animation: slideInUp 1s ease-out 0.2s both;
 }
 
@@ -138,13 +141,14 @@ body {
     background: rgba(255,255,255,0.95);
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
     backdrop-filter: blur(10px);
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(191, 219, 254, 0.5);
 }
 
 .buscador-item {
@@ -160,23 +164,25 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    opacity: 0.6;
+    opacity: 0.7;
+    color: #3b82f6;
 }
 
 .buscador-item input {
     width: 100%;
     padding: 1rem 1.5rem 1rem 50px;
-    border: 2px solid #e1e8ed;
+    border: 2px solid #e0f2fe;
     border-radius: 50px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: white;
+    background: #ffffff;
+    color: #1e40af;
 }
 
 .buscador-item input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     transform: translateY(-2px);
 }
 
@@ -184,40 +190,39 @@ body {
     flex: 0.8;
     min-width: 200px;
     padding: 1rem 1.5rem;
-    border: 2px solid #e1e8ed;
+    border: 2px solid #e0f2fe;
     border-radius: 50px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: white;
+    background: #ffffff;
+    color: #1e40af;
 }
 
 .location-input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     transform: translateY(-2px);
 }
 
 .search-btn {
     padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: #ffffff;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .search-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
 }
-
-
-
 
 /* ===== SECCIÓN DE ESTADÍSTICAS ===== */
 .stats {
@@ -235,36 +240,37 @@ body {
 }
 
 .stat-card {
-    background: white;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
     transition: all 0.3s ease;
+    border: 1px solid rgba(191, 219, 254, 0.3);
 }
 
 .stat-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
 }
 
 .stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #667eea;
+    color: #3b82f6;
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #1e40af;
     font-weight: 500;
 }
 
 /* ===== SECCIÓN DE CARACTERÍSTICAS ===== */
 .features {
     padding: 6rem 0;
-    background: white;
+    background: #ffffff;
 }
 
 .features-container {
@@ -277,7 +283,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #1e293b;
+    color: #1e40af;
 }
 
 .features-grid {
@@ -290,39 +296,45 @@ body {
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
+    background: rgba(248, 250, 252, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(191, 219, 254, 0.3);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    background: rgba(240, 249, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
 }
 
 .feature-icon {
     width: 80px;
     height: 80px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    color: #ffffff;
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #1e293b00;
+    color: #1e40af;
 }
 
 .feature-card p {
-    color: #64748b;
+    color: #3b82f6;
     line-height: 1.6;
 }
 
 /* ===== FOOTER ===== */
 .footer {
-    background: #1e293b;
-    color: white;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: #ffffff;
     padding: 3rem 0 1rem;
 }
 
@@ -346,24 +358,24 @@ body {
 }
 
 .footer-links a {
-    color: #94a3b8;
+    color: #bfdbfe;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: #ffffff;
 }
 
 .contact-info {
     margin-bottom: 2rem;
-    color: #94a3b8;
+    color: #e0f2fe;
 }
 
 .copyright {
-    border-top: 1px solid #334155;
+    border-top: 1px solid rgba(191, 219, 254, 0.3);
     padding-top: 1rem;
-    color: #64748b;
+    color: #bfdbfe;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
