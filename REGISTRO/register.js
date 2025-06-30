@@ -1,4 +1,8 @@
+import {sessionVerify} from "../sessionVerify.js";
 import {sendHTTPrequest,printHTTPrequest} from "../loginAndRegister.js";
+
+//valido que no existan sesiones, si existen lo redirijo al inicio
+sessionVerify();
 
 const password_inputValue = document.getElementById("password");
 const password2_inputValue = document.getElementById("password2");
@@ -28,7 +32,7 @@ password2_inputValue.addEventListener("keypress",(e)=>{ //se llama a esta funcio
 });
 
 
-const form_register = document.getElementById("form_register");
+const form_register = document.getElementById("formRegister");
 
 form_register.addEventListener("submit",async(e)=>{
 
@@ -37,6 +41,7 @@ form_register.addEventListener("submit",async(e)=>{
     const data_form = new FormData(form_register);
 
     const CI = data_form.get("CI");
+    const name = data_form.get("name");
     const email = data_form.get("email");
     const password = data_form.get("password");
 

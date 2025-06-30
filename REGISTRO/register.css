@@ -1,47 +1,190 @@
-.bodySection{
- 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #0051a2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+header h2 {
+  font-size: 1.5em;
+  color: white;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+  color: #e0e0e0;
+}
+
+/* Ocultar "Registrarse" en página de registro */
+body.registro-page .nav-registro {
+  display: none;
+}
+
+/* ESTILOS BODY Y FORMULARIO */
+
+body, html {
+  height: 100%;
+  background: #fff;
+  color: #333;
+}
+
+section {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.registro-form {
+  background-color: #f9f9f9;
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 420px;
+}
+
+.titulo-form {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #0051a2;
+}
+
+.input-box label {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  color: #999;
+  font-size: 1em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.75em;
+  color: #0051a2;
+  background: #f9f9f9;
+  padding: 0 5px;
+}
+
+#registrarse {
+  width: 100%;
+  padding: 15px;
+  background-color: #0051a2;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#registrarse:hover {
+  background-color: #003d7a;
+}
+
+.grupo-centrado {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.grupo-centrado a {
+  color: #0051a2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.grupo-centrado a:hover {
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .registro-form {
     width: 100%;
-    height: 100vh;
-    /* background-color: rgb(204, 193, 193); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-form {
-   
-    max-width: 300px;
-    margin: 40px auto;
-
-}
-
-input {
-    padding: 10px;
-    border: 1px solid #ede7ff;
-    outline: 1px solid #333;
-    border-radius: 5px;
-    font-size: 16px;
-    display: block;
-    margin: 10px auto;
-}
-
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
     margin-top: 10px;
-}
-
-input:focus {
-    border-color: #2575fc;
-    outline: none;
-}
-
-button {
-    background: #2575fc;
-    color: rgb(220, 130, 255);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  }
 }

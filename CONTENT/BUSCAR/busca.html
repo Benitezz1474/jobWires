@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Trabajo | TrabajoFácil</title>
+  <link rel="stylesheet" href="busca.css"/>
+</head>
+<body>
+   <!-- ========== CABECERA ========== -->
+  <header>
+    <div class="logo">TrabajoFácil</div>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+                <li><a href="index.html#empresas">Empresas</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="./CONTENT/CONFIGURACIONES/index.html" class="settings-link">C⚙nfig</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Ofertas de trabajo</h2>
+
+<!-- RESULTADOS -->
+<section id="ofertas">
+
+<form action="busca.php" method="POST" id="formSearch">
+  <input type="text" name="title" id="oferta" placeholder="buscar ofertas: ejemplo: programador jr"> <br>
+  <input type="submit" value="send">
+</form>
+
+<div id="message"></div>
+
+</section>
+
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 TrabajoFácil. Todos los derechos reservados.</p>
+    <div class="contacto">
+      <p>Contacto: <strong>099134355</strong> | Email: <strong>lucasismaeldelpiano3@gmail.com</strong></p>
+      <p><a href="#" style="color: #fff;">¿Necesitás ayuda?</a></p>
+    </div>
+  </footer>
+
+
+  <script type="module" src="./busca.js"></script>
+</body>
+</html>
