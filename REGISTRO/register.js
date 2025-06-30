@@ -1,8 +1,8 @@
 import {sessionVerify} from "../sessionVerify.js";
 import {sendHTTPrequest,printHTTPrequest} from "../loginAndRegister.js";
 
-//valido que no existan sesiones, si existen lo redirijo a otro sitio
-sessionVerify("../CONTENT/BUSCAR/busca.html");
+//valido que no existan sesiones, si existen lo redirijo al inicio
+sessionVerify();
 
 const password_inputValue = document.getElementById("password");
 const password2_inputValue = document.getElementById("password2");
@@ -62,13 +62,38 @@ form_register.addEventListener("submit",async(e)=>{
             headers:{"Content-type" : "application/json"},
             body : JSON.stringify(data)
         }
-       
-        //esta funcion recibe 3 parametros: 1) a donde mandar la info para procesar //2) las opciones que tendra el fecth //3) a donde ir si todo sale bien
 
 
-           const data_info = await sendHTTPrequest("register.php",options); 
-           printHTTPrequest(data_info,"../CONTENT/index.php"); //ya tiene un manejo de excepciones ;)
+       //crear una funcion para enviar el contenido de hcaptcha al servidor
+    //1) agarrar el token del captcha
+     const hcaptchaResponse = document.querySelector('[name="h-captcha-response"]').value;
+    //2) enviarlo al servidor (auth.php) y validarlo
+     fetch("./auth.php",{
+        method : "POST",
+        headers:{"Content-type" : "application/json"},
+        body: JSON.stringify({hcaptcha : hcaptchaResponse})
+     })
+    //3) dependeiendo de la respuesta le mando el formulario o no
+      .then(res => res.json())
+      .then(async(data) => {
+            console.log("captcha registrado")
+            console.log(data)
+            const {success} = data;
+            if(success){
+                  //esta funcion recibe 3 parametros: 1) a donde mandar la info para procesar //2) las opciones que tendra el fecth //3) a donde ir si todo sale bien
+               const data_info = await sendHTTPrequest("register.php",options); 
+               printHTTPrequest(data_info,"../CONTENT/index.php"); //ya tiene un manejo de excepciones ;)
 
+            }
+        
+      })
+
+      .catch(err => {
+        console.log("algo salio mal")
+      })
+
+
+      
     }
 
 })
