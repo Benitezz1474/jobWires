@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Servicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="servicio.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 id="servicioNombre">MiServicio</h1>
+    </header>
+
+    <div class="service-detail">
+      <div class="image-container">
+        <div class="service-image">Imagen del servicio</div>
+      </div>
+      <div class="service-info">
+        <h2 id="servicioCategoria">Categoría</h2>
+        <p><span class="icon">📍</span> <span id="servicioUbicacion">Ubicación</span></p>
+        <p><span class="icon">💵</span> <span id="servicioPrecio">Precio</span></p>
+        <p><span class="icon">🕒</span> <span id="servicioDisponibilidad">Disponibilidad</span></p>
+      </div>
+    </div>
+
+    <section class="description">
+      <h2>Descripción</h2>
+      <p id="servicioDescripcion">Descripción del servicio.</p>
+    </section>
+
+    <section class="provider">
+      <h2>Proveedor</h2>
+      <div class="provider-info">
+        <div class="provider-image"></div>
+        <div>
+          <p><strong id="servicioProveedor">ProveedorNombre</strong></p>
+          <p id="servicioExperiencia">Experiencia</p>
+        </div>
+      </div>
+    </section>
+<!-- Modal para detalles del servicio -->
+<div class="service-modal" id="serviceModal">
+  <div class="modal-overlay" onclick="cerrarModal()"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="serviceName"></h2>
+      <button class="close-button" onclick="cerrarModal()">×</button>
+    </div>
+    
+    <div class="modal-body">
+      <div class="service-info">
+        <!-- Información básica -->
+        <div class="basic-info">
+          <div class="rating-stars" id="modalRating"></div>
+          <span class="price" id="servicePrice"></span>
+        </div>
+
+        <!-- Descripción -->
+        <div class="description">
+          <h3>Descripción</h3>
+          <p id="serviceDescription"></p>
+        </div>
+
+        <!-- Servicios incluidos -->
+        <div class="included-services">
+          <h3>Servicios incluidos</h3>
+          <ul id="serviceFeatures"></ul>
+        </div>
+
+        <!-- Horarios -->
+        <div class="availability">
+          <h3>Horarios disponibles</h3>
+          <div id="serviceSchedule"></div>
+        </div>
+
+        <!-- Botón de contacto -->
+        <button class="contact-button" onclick="mostrarContacto()">
+          Contactar al profesional
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    <section class="reviews">
+      <h2>Reseñas</h2>
+      <div id="reseñasContainer">
+        <!-- Reseñas dinámicas -->
+      </div>
+    </section>
+  </div>
+</body>
+</html>
