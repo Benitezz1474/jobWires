@@ -1,94 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Servicio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="servicio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiServicio</title>
+    <link rel="stylesheet" href="servicio.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1 id="servicioNombre">MiServicio</h1>
-    </header>
-
-    <div class="service-detail">
-      <div class="image-container">
-        <div class="service-image">Imagen del servicio</div>
-      </div>
-      <div class="service-info">
-        <h2 id="servicioCategoria">Categoría</h2>
-        <p><span class="icon">📍</span> <span id="servicioUbicacion">Ubicación</span></p>
-        <p><span class="icon">💵</span> <span id="servicioPrecio">Precio</span></p>
-        <p><span class="icon">🕒</span> <span id="servicioDisponibilidad">Disponibilidad</span></p>
-      </div>
+    <div class="container">
+        <div class="header">
+            <h1>MiServicio</h1>
+        </div>
+        
+        <div class="content">
+            <div class="left-section">
+                <div class="service-image image-upload" id="serviceImage">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <span id="imageText">Imagen del servicio</span>
+                </div>
+                
+                <div class="section-title">Descripción</div>
+                <div class="description" contenteditable="true" id="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Licsedo ateı quet, malesae vida ec ulrısqula, imperdĕt les, ılaurit eget, at nec, mitvinar ma au sec. Alveran ullaurics, vivinser nec, placerat augue, mel eu sent vel.
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="category-badge" contenteditable="true" id="category">CategoriaEjemplo</div>
+                
+                <div class="service-details">
+                    <div class="detail-item">
+                        <svg class="detail-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Ubicación: <span contenteditable="true" id="location">Ciudad, País</span></span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <svg class="detail-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Desde <span contenteditable="true" id="price">$100</span></span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <svg class="detail-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Disponibilidad: <span contenteditable="true" id="availability">Lunes a Viernes 10:00 - 18:00</span></span>
+                    </div>
+                </div>
+                
+                <div class="section-title">Proveedor</div>
+                <div class="provider">
+                    <div class="provider-avatar">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="provider-info">
+                        <h3 contenteditable="true" id="providerName">ProveedorNombre</h3>
+                        <p contenteditable="true" id="providerExp">3 años de experiencia</p>
+                    </div>
+                </div>
+                
+                <button class="reserve-btn" onclick="reservar()">Reservar ahora</button>
+                
+                <div class="section-title">Reseñas</div>
+                <div class="reviews">
+                    <div class="review">
+                        <div class="review-avatar">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="review-content">
+                            <h4 contenteditable="true">NombreUsuario</h4>
+                            <div class="stars">★★★★★</div>
+                            <div class="review-text" contenteditable="true">Comentario de ejemplo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-avatar">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="review-content">
+                            <h4 contenteditable="true">NombreUsuario</h4>
+                            <div class="stars">★★★★★</div>
+                            <div class="review-text" contenteditable="true">Comentario de ejemplo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <section class="description">
-      <h2>Descripción</h2>
-      <p id="servicioDescripcion">Descripción del servicio.</p>
-    </section>
-
-    <section class="provider">
-      <h2>Proveedor</h2>
-      <div class="provider-info">
-        <div class="provider-image"></div>
-        <div>
-          <p><strong id="servicioProveedor">ProveedorNombre</strong></p>
-          <p id="servicioExperiencia">Experiencia</p>
-        </div>
-      </div>
-    </section>
-<!-- Modal para detalles del servicio -->
-<div class="service-modal" id="serviceModal">
-  <div class="modal-overlay" onclick="cerrarModal()"></div>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title" id="serviceName"></h2>
-      <button class="close-button" onclick="cerrarModal()">×</button>
-    </div>
-    
-    <div class="modal-body">
-      <div class="service-info">
-        <!-- Información básica -->
-        <div class="basic-info">
-          <div class="rating-stars" id="modalRating"></div>
-          <span class="price" id="servicePrice"></span>
-        </div>
-
-        <!-- Descripción -->
-        <div class="description">
-          <h3>Descripción</h3>
-          <p id="serviceDescription"></p>
-        </div>
-
-        <!-- Servicios incluidos -->
-        <div class="included-services">
-          <h3>Servicios incluidos</h3>
-          <ul id="serviceFeatures"></ul>
-        </div>
-
-        <!-- Horarios -->
-        <div class="availability">
-          <h3>Horarios disponibles</h3>
-          <div id="serviceSchedule"></div>
-        </div>
-
-        <!-- Botón de contacto -->
-        <button class="contact-button" onclick="mostrarContacto()">
-          Contactar al profesional
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-    <section class="reviews">
-      <h2>Reseñas</h2>
-      <div id="reseñasContainer">
-        <!-- Reseñas dinámicas -->
-      </div>
-    </section>
-  </div>
+    <script src="script.js"></script>
 </body>
 </html>
