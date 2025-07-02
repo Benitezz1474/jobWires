@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Servicios</title>
+    <link rel="stylesheet" href="publicar.css">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="animated-bg"></div>
+    
+    <!-- Formas flotantes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-icon">🛠</div>
+            <h1>Solicitar Servicio</h1>
+            <p>Completa el formulario para obtener una cotización personalizada</p>
+            <div class="header-decorative"></div>
+        </header>
+
+        <!-- Formulario principal -->
+        <form class="service-form" id="serviceForm">
+            <!-- Sección: Información Personal -->
+            <section class="form-section">
+                <div class="section-header">
+                    <div class="section-icon">👤</div>
+                    <h2>Información Personal</h2>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="nombre">Nombre Completo</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="nombre" name="nombre" required>
+                            <div class="input-focus-effect"></div>
+                        </div>
+                    </div>
+                    <div class="form-group half">
+                        <label for="email">Correo Electrónico</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" required>
+                            <div class="input-focus-effect"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="telefono">Teléfono</label>
+                        <div class="input-wrapper">
+                            <input type="tel" id="telefono" name="telefono" required>
+                            <div class="input-focus-effect"></div>
+                        </div>
+                    </div>
+                    <div class="form-group half">
+                        <label for="ciudad">Ciudad</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="ciudad" name="ciudad" required>
+                            <div class="input-focus-effect"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Detalles del Servicio -->
+            <section class="form-section">
+                <div class="section-header">
+                    <div class="section-icon">⚙</div>
+                    <h2>Detalles del Servicio</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="categoria">Categoría del Servicio</label>
+                    <div class="select-wrapper">
+                        <select id="categoria" name="categoria" required>
+                            <option value="">Selecciona una categoría</option>
+                            <option value="plomeria">Plomería</option>
+                            <option value="electricidad">Electricidad</option>
+                            <option value="carpinteria">Carpintería</option>
+                            <option value="pintura">Pintura</option>
+                            <option value="limpieza">Limpieza</option>
+                            <option value="jardineria">Jardinería</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                        <div class="select-arrow">▼</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Descripción del Trabajo</label>
+                    <div class="textarea-wrapper">
+                        <textarea id="descripcion" name="descripcion" rows="5" placeholder="Describe detalladamente el trabajo que necesitas..." required></textarea>
+                        <div class="textarea-focus-effect"></div>
+                    </div>
+                    <small>Incluye todos los detalles importantes para una cotización precisa</small>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="presupuesto">Presupuesto Estimado</label>
+                        <div class="price-input">
+                            <span class="currency-symbol">$</span>
+                            <div class="input-wrapper">
+                                <input type="number" id="presupuesto" name="presupuesto" min="0" step="50">
+                                <div class="input-focus-effect"></div>
+                            </div>
+                        </div>
+                        <small>Opcional - Nos ayuda a ajustar la propuesta</small>
+                    </div>
+                    <div class="form-group half">
+                        <label for="urgencia">Nivel de Urgencia</label>
+                        <div class="select-wrapper">
+                            <select id="urgencia" name="urgencia" required>
+                                <option value="">Selecciona urgencia</option>
+                                <option value="baja">Baja - Puedo esperar</option>
+                                <option value="media">Media - En unos días</option>
+                                <option value="alta">Alta - Esta semana</option>
+                                <option value="urgente">Urgente - Hoy/Mañana</option>
+                            </select>
+                            <div class="select-arrow">▼</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Ubicación y Horario -->
+            <section class="form-section">
+                <div class="section-header">
+                    <div class="section-icon">📍</div>
+                    <h2>Ubicación y Horario</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="direccion">Dirección Completa</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, colonia..." required>
+                        <div class="input-focus-effect"></div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="fecha">Fecha Preferida</label>
+                        <div class="input-wrapper">
+                            <input type="date" id="fecha" name="fecha" required>
+                            <div class="input-focus-effect"></div>
+                        </div>
+                    </div>
+                    <div class="form-group half">
+                        <label for="horario">Horario Preferido</label>
+                        <div class="select-wrapper">
+                            <select id="horario" name="horario" required>
+                                <option value="">Selecciona horario</option>
+                                <option value="manana">Mañana (8:00 - 12:00)</option>
+                                <option value="tarde">Tarde (12:00 - 18:00)</option>
+                                <option value="noche">Noche (18:00 - 22:00)</option>
+                                <option value="flexible">Horario flexible</option>
+                            </select>
+                            <div class="select-arrow">▼</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Imágenes -->
+            <section class="form-section">
+                <div class="section-header">
+                    <div class="section-icon">📷</div>
+                    <h2>Imágenes del Proyecto</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="imagenes">Subir Imágenes (Opcional)</label>
+                    <div class="file-upload-area" id="fileUploadArea">
+                        <input type="file" id="imagenes" name="imagenes" multiple accept="image/*" class="file-input">
+                        <div class="file-upload-content">
+                            <div class="file-upload-icon">📷</div>
+                            <p>Arrastra imágenes aquí o <span class="file-upload-text">haz clic para seleccionar</span></p>
+                            <small>Máximo 5 imágenes, 10MB cada una</small>
+                        </div>
+                    </div>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div>
+            </section>
+
+            <!-- Sección: Información Adicional -->
+            <section class="form-section">
+                <div class="section-header">
+                    <div class="section-icon">💬</div>
+                    <h2>Información Adicional</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentarios">Comentarios Adicionales</label>
+                    <div class="textarea-wrapper">
+                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Cualquier información adicional que consideres importante..."></textarea>
+                        <div class="textarea-focus-effect"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="acepto" name="acepto" required>
+                            <span class="checkmark"></span>
+                            Acepto los <a href="#" class="link">términos y condiciones</a> del servicio
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Deseo recibir actualizaciones y ofertas por email
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botones de acción -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="resetBtn">
+                    <span class="btn-icon">🔄</span>
+                    Limpiar Formulario
+                </button>
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span class="btn-icon">🚀</span>
+                    Enviar Solicitud
+                    <div class="btn-loading" id="btnLoading"></div>
+                </button>
+            </div>
+        </form>
+
+        <!-- Mensaje de éxito -->
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">✅</div>
+            <h3>¡Solicitud Enviada!</h3>
+            <p>Hemos recibido tu solicitud. Te contactaremos pronto con una cotización personalizada.</p>
+            <button class="btn btn-secondary" onclick="resetForm()">Nueva Solicitud</button>
+        </div>
+    </div>
+</body>
+</html>
