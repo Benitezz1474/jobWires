@@ -1,0 +1,75 @@
+USUARIO (
+  IdUsuario PK,
+  Nombre,
+  Apellido,
+  Telefono,
+  Email,
+  Credenciales,
+  Contrasena,
+  FotoPerfil,
+  Calle,
+  NumeroPuerta,
+  Ciudad
+)
+
+CLIENTE (
+  IdCliente PK,
+  IdUsuario FK REFERENCES Usuario(IdUsuario)
+)
+
+PROVEEDOR (
+  IdProveedor PK,
+  IdUsuario FK REFERENCES Usuario(IdUsuario),
+  Habilidades,
+  Experiencia
+)
+
+ADMINISTRADOR (
+  IdAdministrador PK,
+  IdUsuario FK REFERENCES Usuario(IdUsuario)
+)
+
+FECHA (
+  IdFecha PK,
+  Dia,
+  Hora
+)
+
+MENSAJE (
+  IdMensaje PK,
+  Remitente FK REFERENCES Usuario(IdUsuario),
+  Destinatario FK REFERENCES Usuario(IdUsuario),
+  Contenido,
+  IdFecha FK REFERENCES Fecha(IdFecha)
+)
+
+SERVICIO (
+  IdServicio PK,
+  Titulo,
+  Descripcion,
+  Precio,
+  Ubicacion,
+  Imagen,
+  IdProveedor FK REFERENCES Proveedor(IdProveedor),
+  IdFecha FK REFERENCES Fecha(IdFecha)
+)
+
+RESENA (
+  IdResena PK,
+  Usuario FK REFERENCES Usuario(IdUsuario),
+  Descripcion,
+  Puntaje,
+  IdFecha FK REFERENCES Fecha(IdFecha)
+)
+
+CONTRATO (
+  IdCliente FK REFERENCES Cliente(IdCliente),
+  IdServicio FK REFERENCES Servicio(IdServicio),
+  PRIMARY KEY(IdCliente, IdServicio)
+)
+
+EVALUACION (
+  IdResena FK REFERENCES Resena(IdResena),
+  IdServicio FK REFERENCES Servicio(IdServicio),
+  PRIMARY KEY(IdResena, IdServicio)
+)
