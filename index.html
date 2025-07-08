@@ -1,100 +1,107 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T
-         - Plataforma de Oficios</title>
-    <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="general.css">
+    <title>Document</title>
 </head>
 <body>
 
-    <!-- CABECERA -->
     <header>
-        <div class="logo">TrabajoFácil</div>
+       <div class="logo">
+        <a href="./index.html"><h2>jobsWebSites</h2></a>
+       </div>
         <nav>
             <ul>
-                <li><a href="./LOGIN/login.html">Ingresar</a></li>
-                <li><a href="./REGISTRO/register.html">Registrarse</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-                <li><a href="info.html">Más info</a></li>
+                <li class="linkActually"><a href="./index.html">Home</a></li>
+                <li><a href="./LOGIN/index.html">Login</a></li>
+                <li><a href="./REGISTRO/index.html">Register</a></li>
             </ul>
         </nav>
     </header>
+    
+    <div class="portada">
+       <div class="portada__shadow">
+         <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Cupiditate minima, eos odio sunt esse ea magni ullam. Assumenda, 
+             inventore quibusdam!
+        </p>
+        <button>GET STARTED</button>
+       </div>
+    </div>
 
-    <!-- SLIDER DE IMÁGENES -->
-    <section class="cover">
-        <ul class="slider">
-        <img src="imagnes/fondo1.jpg" alt="Imagen 1">
-        <img src="imagnes/fondo2.jpg" alt="Imagen 2">
-        <img src="imagnes/fondo3.png" alt="Imagen 3">
-        </ul>
-    </section>
 
-    <!-- MENSAJE DE BIENVENIDA Y BOTONES -->
-    <section class="bienvenida">
-        <h1>Conectamos clientes con profesionales</h1>
-        <p>Buscá, ofrecé y reservá servicios de forma rápida y segura.</p>
-        <div class="botones">
-            <a href="buscar.html" class="btn">Buscar trabajo</a>
-            <a href="publicar.html" class="btn secundario">Publicar servicio</a>
+    <div class="services">
+
+        <div class="card">
+            <img src="./SOURCE/card2.svg.svg" alt="">
+            <h2>Titulo de la carta</h2>
+            <p>
+                breve decripcion que indique algun beneficio o algo relacionado a la img
+            </p>
         </div>
-    </section>
-
-    <!-- Página de inicio -->
-    <section id="inicio">
-        <h2>Bienvenido a la Plataforma de Oficios</h2>
-        <p>Conecta con proveedores y clientes de servicios fácilmente.</p>
-    </section>
-
-    <!-- Página de búsqueda de servicios -->
-    <section id="buscar-servicios">
-        <h2>Buscar Servicios</h2>
-        <form>
-            <label for="categoria">Categoría:</label>
-            <select id="categoria" name="categoria">
-                <option value="plomeria">Plomería</option>
-                <option value="electricidad">Electricidad</option>
-                <option value="jardineria">Jardinería</option>
-            </select>
-
-            <label for="ubicacion">Ubicación:</label>
-            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad o dirección">
-
-            <label for="palabra-clave">Palabra clave:</label>
-            <input type="text" id="palabra-clave" name="palabra-clave" placeholder="Ejemplo: reparación">
-
-            <button type="submit">Buscar</button>
-        </form>
-    </section>
-
-    <!-- Página de detalle del servicio -->
-    <section id="detalle-servicio">
-        <h2>Detalle del Servicio</h2>
-        <article>
-            <h3>Servicio de Plomería</h3>
-            <p>Descripción: Reparación de tuberías y mantenimiento.</p>
-            <p>Ubicación: Montevideo</p>
-            <p>Precio: $100</p>
-        </article>
-    </section>
 
 
-    <!-- Bandeja de entrada de mensajes -->
-    <section id="mensajes">
-        <h2>Mensajes</h2>
-        <ul>
-            <li><a href="#">Mensaje de Cliente 1</a></li>
-            <li><a href="#">Mensaje de Cliente 2</a></li>
-        </ul>
-    </section>
+          <div class="card">
+            <img src="./SOURCE/img1.svg.svg" alt="">
+            <h2>Titulo de la carta</h2>
+            <p>
+                breve decripcion que indique algun beneficio o algo relacionado a la img
+            </p>
+        </div>
 
-    <!-- PIE DE PÁGINA -->
+
+
+          <div class="card">
+            <img src="./SOURCE/card2.svg.svg">
+            <h2>Titulo de la carta</h2>
+            <p>
+                breve decripcion que indique algun beneficio o algo relacionado a la img
+            </p>
+        </div>
+
+
+
+          <div class="card">
+            <img src="./SOURCE/card2.svg.svg" alt="">
+            <h2>Titulo de la carta</h2>
+            <p>
+                breve decripcion que indique algun beneficio o algo relacionado a la img
+            </p>
+        </div>
+
+
+
+
+          <div class="card">
+            <img src="./SOURCE/img1.svg.svg" alt="">
+            <h2>Titulo de la carta</h2>
+            <p>
+                breve decripcion que indique algun beneficio o algo relacionado a la img
+            </p>
+        </div>
+
+
+
+
+          <div class="card">
+            <img src="./SOURCE/card2.svg.svg" alt="">
+            <h2>Titulo de la carta</h2>
+            <p>
+                breve decripcion que indique algun beneficio o algo relacionado a la img
+            </p>
+        </div>
+
+
+
+    </div>
+
+
     <footer>
-        <p>&copy; 2025 TrabajoFácil. Todos los derechos reservados.</p>
-        <p>Contacto: <strong>lucasismaeldelpiano3@gmail.com</strong> | Tel: <strong>099134355</strong></p>
+
     </footer>
 
 </body>

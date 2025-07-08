@@ -1,104 +1,130 @@
-/* Estilos globales */
-* {
-    padding: 0;
+*{
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: sans-serif;
 }
 
-/* Fondo de página animado con transición */
-/* .slider {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    animation: fondoSlider 18s infinite;
-    transition: background-image 1s ease-in-out;
-} */
-
+/* variables */
 
 :root{
 
-    --cp1: #e6e9e6;
-    --cp2: #0c2443;
-    --cp3: #616e7f;
-    --cp4: #8c94a5;
-
+    --color1:#48e;
+    --color2:#fff;
+    --color3:#333;
 }
 
-/* -------------------------header ------------------- */
+/* header y nav */
 
 header{
+
     width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-/* Cambio de fondo con imágenes */
-@keyframes fondoSlider {
-    0%, 100% { background-image: url('imagenes/fondo1.jpg'); opacity: 1; }
-    33% { background-image: url('imagenes/fondo2.jpg'); opacity: 0.5; }
-    66% { background-image: url('imagenes/fondo3.png'); opacity: 0.5; }
-}
-
-/* Encabezado */
-header {
+    height: 80px;
+    background-color: var(--color1);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
-    height: 70px;
-    box-shadow: 0px 20px 10px rgba(161, 161, 161, 0.4);
-    margin: 0 auto;
-    border: none;
-    border-radius: 10px;
-    background-color: white; /* Asegura visibilidad con cualquier fondo */
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
-header nav ul {
+header h2{
+    color: var(--color2);
+}
+
+header nav ul{
+
     display: flex;
 }
 
-header nav ul li {
-    margin: 0 10px;
+header nav ul li{
+
+    margin: 0 10px ;
+    padding: 10px;
+    border-radius: 4px;
 }
 
-header nav ul li a {
-    color: #333;
-    transition: color 0.3s ease;
+header nav ul li a{
+
+    color: var(--color2);
 }
 
-header nav ul li a:hover {
-    color: #007BFF;
+.linkActually{
+
+    background-color: var(--color2);
+
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        display: none;
+.linkActually a{
+    
+    color: var(--color1);
+}
+
+/* buttons */
+
+button{
+
+    border: none;
+    outline: 1px solid var(--color2);
+    background-color: var(--color1);
+    padding: 10px;
+    border-radius: 4px;
+    color: var(--color2);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+button:hover{
+
+    background-color: var(--color2);
+    color: var(--color1);
+    outline: 1px solid var(--color1);
+    transition: all .2s;
+}
+
+.buttonSelected{ /*se agrega al hacer click, mas detalles en: CONTENT/BUSCAR/busca.js*/
+
+    background-color: green;
+}
+
+
+/* spinner */
+
+.spinner{
+
+    width: 140px;
+    margin: 10px auto;
+    height: 140px;
+    border-radius: 100%;
+    border-top: 2px solid var(--color1);
+    background-color: var(--color2);
+    animation-name: load;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    display: none;
+}
+
+@keyframes load{
+
+    0%{
+       
+        transform: rotate(0deg);
     }
 
-    header nav ul.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
+    100%{
+        transform: rotate(360deg);
     }
 }
 
-/* -------------------------forms ------------------- */
 
 
 
-/* -------------------------footer ------------------- */
+/* footer */
 
+footer{
+
+    width: 100%;
+    height: 200px;
+    background-color: var(--color3);
+  
+}

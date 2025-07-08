@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Servicios de Oficina | ServiciosFácil</title>
+  <link rel="stylesheet" href="busca.css">
+  <link rel="stylesheet" href="../../general.css">
+
+</head>
+<body>
+  <!-- Navigation Header -->
+ 
+    <header>
+       <div class="logo">
+       <a href="./index.html"><h2>jobsWebSites</h2></a>
+       </div>
+        <nav>
+            <ul>
+                <li class="linkActually"><a href="./BUSCAR/index.html">Buscar</a></li>
+                <li><a href="../CHAT/index.html">Chat</a></li>
+                <li><a href="./">Services</a></li>
+                <li><a href="../CONFIGURACIONES/index.html">User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <form action="#" id="formSearch">
+            <input type="text" name="title" id="search" placeholder="Example: Enginer">
+            <input type="submit" value="Search">
+    </form>
+
+     <form action="#">
+       <div class="filtros">
+             <!-- con js crear filtros -->
+
+           </div>
+     </form>
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+    <!-- Aqui se renderizan las ofertas con javascript -->
+    <div class="message"></div>
+
+ 
+  </body>
+  <script type="module" src="../../sessionVerify.js"></script>
+  <script type="module" src="busca.js"></script>
+  </html>
