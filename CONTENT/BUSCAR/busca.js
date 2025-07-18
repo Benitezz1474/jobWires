@@ -17,7 +17,7 @@ const filters = [ //filtros a mostrar
 ]
 
 let filter_selected = []; //iran los filtros seleccionados
-let filter_atributte = []; //iran los atributtons de los elemenotos creados
+let filter_atributte = []; //array de objetos que se tendra que enviar a php con los filtros
 
 btn_filter_reset.addEventListener("click",()=>{ //reestablecera los filtros de busqueda
 
@@ -33,29 +33,31 @@ btn_filter_reset.addEventListener("click",()=>{ //reestablecera los filtros de b
 const addFilterSelected =(option,identifacdor)=>{
     
     // filter_selectedDOM.innerHTML = "";
-    console.log(identifacdor)
+    // console.log(identifacdor)
+    // console.log(filter_atributte)
+    const obj = {
+        title : identifacdor,
+        option : option
+    }
+
+    // if(filter_atributte.includes(obj.title)) console.log("si")
+    // if(filter_atributte.includes(identifacdor)) return false
+    // else if(filter_selected.includes(option)) return false
+    const result = filter_atributte.some(x => x.title == identifacdor)
+    if(result == true && result != undefined) return false
+    filter_atributte.push(obj);
     console.log(filter_atributte)
-    
-    if(filter_atributte.includes(identifacdor)) return false
-    else if(filter_selected.includes(option)) return false
-    
     // filter_atributte += identifacdor;
     // filter_selected += option;
+
     const button = document.createElement("button");
-    button.innerHTML = option;
-    
+    button.innerHTML = option
     
     filter_selectedDOM.appendChild(button);
     
     
 }
 
-//eliminar filtros de la seleccion
-// const removeFilterSelected=(option)=>{
-    
-//     const newFilter_selected = filter_selected.filter(opt => opt != option);
-//     return newFilter_selected;
-// }
 
 //pintarlos en el DOM
 
@@ -99,7 +101,8 @@ for(let i = 0 ; i < filters.length; i++){
 }
 
 //3) mandar al servidor
-
+//recorrer el array "filter_atributte" para obtener los filtros de busqueda
+//una vez tengo esos filtros se los debo enviar a php como un json (array) de forma ordenada y clara
 
 
 
