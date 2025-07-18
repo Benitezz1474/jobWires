@@ -9,27 +9,32 @@ $message = "error";
 try{
 
     $CI = $data["CI"];
+    $name = $data["name"];
+    $surname = $data["surname"];
     $email = $data["email"];
     $password = $data["password"];
     $password_prepare = password_hash($password,PASSWORD_DEFAULT); //clave encriptada
+    
+ $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
 
- $link = new PDO("mysql:host=localhost;dbname=clientes","root","admin");
-
- $sql = "SELECT * FROM usuarios WHERE email = ?";
+ $sql = "SELECT * FROM usuario WHERE Email = :em";
 
  $stmt = $link->prepare($sql);
 
- $stmt->bindParam(1,$email);
+ $stmt->bindParam(":em",$email);
  $stmt->execute();
  
  if($stmt->rowCount() < 1){
     //insertar
 
-    $sql_insert = "INSERT INTO usuarios (CI,clave,email) VALUES (?, ?, ?)";
+    $sql_insert = "INSERT INTO usuario (CiUsuario,Nombre,Apellido,Email,Contraseña) VALUES (?,?,?,?,?)";
     $stmt_insert = $link->prepare($sql_insert);
     $stmt_insert->bindParam(1,$CI);
-    $stmt_insert->bindParam(2,$password_prepare);
-    $stmt_insert->bindParam(3,$email);
+    $stmt_insert->bindParam(2,$name);
+    $stmt_insert->bindParam(3,$surname);
+    $stmt_insert->bindParam(4,$email);
+    $stmt_insert->bindParam(5,$password_prepare);
+
   
     $stmt_insert->execute();
 

@@ -41,7 +41,8 @@ form_register.addEventListener("submit",async(e)=>{
     const data_form = new FormData(form_register);
 
     const CI = data_form.get("CI");
-    const name = data_form.get("name");
+    const name = data_form.get("username");
+    const surname = data_form.get("surname");
     const email = data_form.get("email");
     const password = data_form.get("password");
 
@@ -52,6 +53,8 @@ form_register.addEventListener("submit",async(e)=>{
         
         const data = {
             CI,
+            name,
+            surname,
             email,
             password
         }
@@ -77,11 +80,12 @@ form_register.addEventListener("submit",async(e)=>{
       .then(res => res.json())
       .then(async(data) => {
             console.log("captcha registrado")
-            console.log(data)
             const {success} = data;
+            console.log(success)
             if(success){
+                console.log("entrando")
                   //esta funcion recibe 3 parametros: 1) a donde mandar la info para procesar //2) las opciones que tendra el fecth //3) a donde ir si todo sale bien
-               const data_info = await sendHTTPrequest("register.php",options); 
+               const data_info = await sendHTTPrequest("./register.php",options); 
                printHTTPrequest(data_info,"../CONTENT/index.php"); //ya tiene un manejo de excepciones ;)
 
             }
@@ -89,7 +93,7 @@ form_register.addEventListener("submit",async(e)=>{
       })
 
       .catch(err => {
-        console.log("algo salio mal")
+        console.log("algo salio mal: " + err);
       })
 
 

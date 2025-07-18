@@ -45,7 +45,7 @@ form_login.addEventListener("submit",async(e) => {
             const {success} = data;
             if(success){
               
-                 const data_json = await sendHTTPrequest("login.php",options);
+                 const data_json = await sendHTTPrequest("./login.php",options);
                  printHTTPrequest(data_json,"../CONTENT/index.php") //manda la configuracion a esta funcion
 
             }

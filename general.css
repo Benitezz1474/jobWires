@@ -7,6 +7,12 @@
 
 }
 
+#navSelect{
+    background-color: #fff;
+    color: #48e;
+    border-radius: 10px;
+}
+
 :root {
   --primary-color: #667eea;
   --primary-dark: #5a67d8;

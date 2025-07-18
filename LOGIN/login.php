@@ -9,9 +9,9 @@ $data = json_decode(file_get_contents('php://input'), true);
 
     //coneixion a la base de datos y demas
   try{
-     $link = new PDO("mysql:host=localhost;dbname=clientes","root","admin");
+     $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
      
-     $Sql_select = "SELECT ClAVE FROM usuarios WHERE EMAIL = ?";
+     $Sql_select = "SELECT Contraseña FROM usuario WHERE EMAIL = ?";
      $stmt = $link -> prepare($Sql_select);
      $stmt -> bindParam(1,$email);
      $stmt -> execute();
@@ -34,7 +34,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 
     }catch(PDOException $e){
-        $message = "error al conectar con la BBDD clientes";
+        $message = "error al conectar con la BBDD clientes: " .$e->getMessage();
   }
   
   finally{
