@@ -3,7 +3,10 @@
 header('Content-Type: application/json'); // Establece el tipo de contenido como JSON (configurarcion)
 $data = json_decode(file_get_contents('php://input'), true); //obtengo los datos JSON y los trabajo como array_assoc
 
-$message = "error";
+$message = [
+    "data" => "undefined",
+    "rol" => "undefined"
+];
 
 
 try{
@@ -13,6 +16,7 @@ try{
     $surname = $data["surname"];
     $email = $data["email"];
     $password = $data["password"];
+    $rol = $data["rol"];
     $password_prepare = password_hash($password,PASSWORD_DEFAULT); //clave encriptada
     
  $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
@@ -38,20 +42,24 @@ try{
   
     $stmt_insert->execute();
 
-    $message = "success";
+    $message = [
+        "data" => "success",
+        "rol" => $rol ?? "client"
+    ];
 
  }
 
 else  if($stmt->rowCount() > 0){
-  $message = "user_exist";
+  $message["data"] = "user_exist";
 }
 
 } catch (PDOexception $e){
    
-    $message = "error al conectar con la bdd: " . $e->getMessage();
+    $message["data"] = "error al conectar con la bdd: " . $e->getMessage();
 }
 finally{
 
+    $message["rol"] = $rol ?? "client";
     echo json_encode($message);
 }
 

@@ -10,30 +10,35 @@
 <body>
     <header class="header">
     <nav class="nav">
-            <div class="logo">JobsWebSite</div>
+            <div class="logo">jobsWires</div>
             <ul class="nav-links">
                  <li><a href="../index.html">Inicio</a></li>
                     <li id="navSelect"><a href="../REGISTRO/register.html" >Buscar</a></li>
-                    <li><a href="../REGISTRO/register.html" >Publicar</a></li>
-                    <li><a href="../REGISTRO/register.html" >Configuraciones</a></li>
+                    <li><a href="../CONFIGURACIONES/index.html" >Configuraciones</a></li>
             </ul>
         </nav>
   </header>
 
-  <form action="">
-    <input type="text" name="title" id="title">
+ <section>
+   <form action="" id="search">
+    <input type="text" name="title" id="title" placeholder="EX: Reparacion, Electricidad, etc">
     <input type="submit" value="Search">
   </form>
   <!-- con js se creran los filtros (pd: tuvimos que usar react, menos dolor de cabeza, mas optimo xD) -->
 <div class="filters"></div>
-<div>
+<div class="filters_selected">
+  
   <div>
-    <h2>SELECCIONADOS</h2>
-     <button id="filter_reset">RESTABLECER FILTROS</button>
-  </div>
-  <!-- con js se muestran los filtros seleccionados -->
-<div class="filters_selectedDOM"></div>
+  <h3>SELECCIONADOS</h3>
+  <button id="filter_reset">RESTABLECER FILTROS</button>
+ </div>
+  
+    <!-- con js se muestran los resultados -->
+    <!-- con js se muestran los filtros seleccionados -->
+    <div class="filters_selectedDOM"></div>
 </div>
+ <div id="servicios"></div>
+ </section>
 </body>
 <script type="module" src="./busca.js"></script>
 </html>

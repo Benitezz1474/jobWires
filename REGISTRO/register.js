@@ -45,6 +45,7 @@ form_register.addEventListener("submit",async(e)=>{
     const surname = data_form.get("surname");
     const email = data_form.get("email");
     const password = data_form.get("password");
+    const rol = data_form.get("rol");
 
 
     
@@ -56,8 +57,12 @@ form_register.addEventListener("submit",async(e)=>{
             name,
             surname,
             email,
-            password
+            password,
+            rol
         }
+
+        console.log("datos a enviar a php:")
+        console.log(data);
 
 
         const options = {
@@ -85,9 +90,14 @@ form_register.addEventListener("submit",async(e)=>{
             if(success){
                 console.log("entrando")
                   //esta funcion recibe 3 parametros: 1) a donde mandar la info para procesar //2) las opciones que tendra el fecth //3) a donde ir si todo sale bien
-               const data_info = await sendHTTPrequest("./register.php",options); 
-               printHTTPrequest(data_info,"../CONTENT/index.php"); //ya tiene un manejo de excepciones ;)
+              
+                  const data_info = await sendHTTPrequest("./register.php",options); 
 
+                  //dependiendo del rol, lo manda a un contenido distinto
+                  if(rol == "client") printHTTPrequest(data_info,"../CONTENT/index.php"); //ya tiene un manejo de excepciones ;)
+                  else if(rol == "proveedor") printHTTPrequest(data_info,"../CONTENT_PROVIDER/index.php"); //ya tiene un manejo de excepciones ;)
+                  else if(rol == "admin") printHTTPrequest(data_info,"../CONTENT_ADMIN/index.php"); //ya tiene un manejo de excepciones ;)
+                  
             }
         
       })
