@@ -1,6 +1,7 @@
 import {sessionVerify} from "../../sessionVerify.js";
 sessionVerify();
 
+
 const filtersDOM = document.querySelector(".filters") //se hará el render de los filtros acá
 const filter_selectedDOM = document.querySelector(".filters_selectedDOM");
 const btn_filter_reset = document.querySelector("#filter_reset");

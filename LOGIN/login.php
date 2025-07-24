@@ -2,10 +2,14 @@
 header('Content-Type: application/json'); // Establece el tipo de contenido como JSON
 $data = json_decode(file_get_contents('php://input'), true);
 
-    $message = "error"; //esta variable se enviará a js y se trabajará desde ahí en el archivo "loginAndRegister.js"
-    
-    $email = $data["email"];
-    $password = $data["password"];
+$email = $data["email"];
+$password = $data["password"];
+
+
+ $message = [
+       "data" => "error",
+       "rol" => 
+    ]; //esta variable se enviará a js y se trabajará desde ahí en el archivo "loginAndRegister.js"
 
     //coneixion a la base de datos y demas
   try{

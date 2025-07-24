@@ -1,0 +1,59 @@
+section{
+
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: minmax(170px, 210px) 1fr;
+    /* border: 1px solid red; */
+}
+
+.subNav{
+
+    /* border: 1px solid blue; */
+    box-shadow: 10px 10px 10px rgba(128, 127, 127, 0.457);
+    padding: 5px 15px;
+
+
+}
+
+.subNav a {
+
+    display: block;
+}
+
+#subNavSelect{
+
+    background-color: rgba(45, 121, 235, 0.253);
+}
+
+a #subNavSelect{
+        color: rgb(24, 86, 230);
+
+}
+
+a{
+    /* color: ; */
+    text-decoration: none;
+    color: #333;
+}
+
+.subNav nav ul li{
+
+    margin: 10px 0;
+    padding: 15px 10px;
+    border: none;
+    /* outline: 1px solid #aaa; */
+    border-radius: 2px;
+    list-style: none;
+    transition: all 0.2s;
+
+
+}
+.subNav nav ul li:hover{
+    cursor: pointer;
+    transform: translateY(2px);
+    transition: all 0.2s
+
+}
+

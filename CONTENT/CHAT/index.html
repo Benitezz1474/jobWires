@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Interface</title>
-    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="./chat.css">
+    <link rel="stylesheet" href="../../general.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <div class="user-info">
-                <div class="avatar">
-                    <div class="avatar-icon"></div>
-                </div>
-                <div class="user-details">
-                    <h3>ProveedorNombre</h3>
-                    <div class="status">En línea</div>
-                </div>
-            </div>
-            <div class="service-info">
-                <h4>MiServicio</h4>
-                <div class="service-date">16 de agosto de<br>2025 - 14:00</div>
-                <button class="service-btn">Ver detalles del servicio</button>
-            </div>
-        </div>
 
-        <div class="chat-messages">
-            <!-- Los mensajes aparecerán aquí -->
-        </div>
+<header class="header">
+    <nav class="nav">
+            <div class="logo">jobsWires</div>
+            <ul class="nav-links">
+                 <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../BUSCAR/index.html" >Buscar</a></li>
+                    <li id="navSelect"><a href="../CHAT/index.html" >Chat</a></li>
+                    <li><a href="../CONFIGURACIONES/PERFIL/index.html" >Configuraciones</a></li>
+            </ul>
+        </nav>
+  </header>
 
-        <div class="chat-input">
-            <div class="input-container">
-                <input type="text" class="message-input" placeholder="Escribir un mensaje...">
-                <button class="send-btn">Enviar</button>
+  <!-- Es donde estan todos los chats de TODOS de los servicios que contrata -->
+  <div class="chats_content">
+<!-- contenido de ejmplo, SE DEBE ELIMINAR LUEGO -->
+     <div class="chats_content_item">
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+      <div class="chat_item"></div>
+<!-----^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+     </div>
+    <!-- es el chat en si (form). se cargan los sms y se envian -->
+     <div class="chat">
+                  
+            <div class="chat_provider">
             </div>
-        </div>
-    </div>
+
+           <div class="chat_client">
+               <div class="messagge">
+               <!-- message recibidos/enviados -->
+               <input type="text" name="message" id="" readonly placeholder="Texto de ejemplo">
+            </div>
+            <form action="">
+                <!-- message a enviar -->
+                 <input type="text" name="message_client" id="message_client">
+                 <input type="submit" value="Send" name="Send">
+            </form>
+           </div>
+
+        </form>
+     </div>
+  </div>
+
 </body>
 </html>
