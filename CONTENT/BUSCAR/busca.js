@@ -7,6 +7,7 @@ const filter_selectedDOM = document.querySelector(".filters_selectedDOM");
 const btn_filter_reset = document.querySelector("#filter_reset");
 const form_search = document.getElementById("search");
 import {sendHTTPrequest} from "../../loginAndRegister.js";
+import { printServices } from "./printServices.js";
 
 const filters = [ //filtros a mostrar
     {
@@ -172,8 +173,9 @@ const options = {
 }
 
 const services = await sendHTTPrequest("./busca.php",options);
-console.log("result:");
-console.log(services);
+console.log("services:");
+
+printServices(services);
 
 
 

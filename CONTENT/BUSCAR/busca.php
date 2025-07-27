@@ -6,31 +6,33 @@ $data = json_decode(file_get_contents('php://input'), true); //obtengo los datos
 
 //obtengo los filtros de busqueda y los preparo (mas adelante)
 $title = $data["title"] ?? "tecnico"; 
-$categoria = $data["categoria"] ?? "electricista";
-$zona = $data["zona"] ?? "sayago";
-$calificacion = $data["calificacion"] ?? 5;
+$ubicacion = $data["zona"] ?? "sayago";
+// $categoria = $data["categoria"] ?? "electricista";
+// $calificacion = $data["calificacion"] ?? 5;
 
 //variable que se devuelve al lado del cliente
-$message = "error"
+$message = "error";
 
 try{
 //realizo la conexion a la BBDD
 $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
-if($link->connect_errno()){
-   
-    $link = null;
-    echo json_encode($message);
-}
 
 //creo la consulta con los filtros
-// $sql = "SELECT * FROM Servicios WHERE titulo = $categoria AND Precio = $calificacion AND Descripcion = $title";
-$sql = "SELECT * FROM Servicios WHERE titulo = :titulo AND Precio = :Precio AND Descripcion = :Descripcion";
+// $sql = "SELECT * FROM servicio WHERE titulo = :titulo AND Ubicacion = :Ubicacion";
+$sql = "SELECT * FROM servicio WHERE titulo LIKE :titulo";
+
+//PHP no permite el ingreso de caracteres SQL especiales directamente, por eso agrego
+//estas variables de este modo
+$title_param = "%" . $title . "%";
+$ubicacion_para = "%" . $ubicacion . "%";
+
+
 
 //consulta preparada...
 $stmt = $link -> prepare($sql);
-$stmt -> bindParam(":titulo",$title);
-$stmt -> bindParam(":Precio",$precio);
-$stmt -> bindParam(":Descripcion",$categoria);
+$stmt -> bindParam(":titulo", $title_param);
+// $stmt -> bindParam(":Ubicacion",$precio);
+// $stmt -> bindParam(":Descripcion",$categoria);
 //envio
 $stmt -> execute();
 //pregunto si existen resultados
@@ -38,10 +40,10 @@ if($stmt->rowCount() > 0){
     $message = $stmt -> fetchAll(PDO::FETCH_ASSOC); //guardo la informacion en la variable sms
 }
 
- else $message = "no_found"
+ else $message = "no_found";
 
-} catch(PDO Exception $e){
-
+} catch(PDOException $e){
+     $message = "error";
 }
 
 finally{
@@ -68,6 +70,6 @@ finally{
 // ];
 
 
-echo json_encode($obj); //esto funciona ;)
+//echo json_encode($obj); //esto funciona ;)//
 
 ?>

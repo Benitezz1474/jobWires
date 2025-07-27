@@ -40,12 +40,12 @@ form_login.addEventListener("submit",async(e) => {
     //3) dependeiendo de la respuesta le mando el formulario o no
       .then(res => res.json())
       .then(async(data) => {
-            console.log("captcha registrado")
-            console.log(data)
             const {success} = data;
             if(success){
               
                  const data_json = await sendHTTPrequest("./login.php",options);
+                 console.log("loginAndRegister");
+                 console.log(data_json);
                  printHTTPrequest(data_json,"../CONTENT/index.php") //manda la configuracion a esta funcion
 
             }

@@ -6,45 +6,61 @@ $email = $data["email"];
 $password = $data["password"];
 
 
- $message = [
-       "data" => "error",
-       "rol" => 
-    ]; //esta variable se enviará a js y se trabajará desde ahí en el archivo "loginAndRegister.js"
 
-    //coneixion a la base de datos y demas
-  try{
+
+//esta variable se enviará a js y se trabajará desde ahí en el archivo "loginAndRegister.js"
+$message = [
+  "data" => "undefined",
+  "rol" => "undefined"
+];
+
+     //coneixion a la base de datos y demas
      $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
-     
-     $Sql_select = "SELECT Contraseña FROM usuario WHERE EMAIL = ?";
-     $stmt = $link -> prepare($Sql_select);
-     $stmt -> bindParam(1,$email);
-     $stmt -> execute();
 
-     if($stmt -> rowCount() > 0){
+ $sql = "SELECT * FROM usuario WHERE Email = :em";
+
+ $stmt = $link->prepare($sql);
+
+ $stmt->bindParam(":em",$email);
+ $stmt->execute();
+ 
+ if($stmt->rowCount() > 0){
          
-         $result = $stmt->fetchAll(); //recupera el hash del campo clave de la bbdd
-         $hash = $result[0][0]; //la almacena el hash
+         $result = $stmt->fetch(PDO::FETCH_ASSOC); //recupera el hash del campo clave de la bbdd
+         $hash = $result["Contraseña"]; //la almacena el hash
          $password_hash = password_verify($password,$hash);//verifica si el hash pertenece a la clave
-         $message = $password_hash;
+        //  $message = $password_hash;
 
          if($password_hash){
-           session_start();
-           $_SESSION["CI"] = $email;
-           $message = "success"; //equivalente a header("location: url") ya que esto se manda a JS y se trabaja ahí para mayor seguridad
+          //  session_start();
+          $rol = $result["Rol"];
+
+          $message = [
+            "data" => "success",
+            "rol" => $rol ?? "client"
+          ];
+          echo json_encode($message);
+          //  $_SESSION["email"] = $email;
+          //  $message = "success"; //equivalente a header("location: url") ya que esto se manda a JS y se trabaja ahí para mayor seguridad
          }
 
-         else $message = "incorrect"; //mostrara un sms de "usario y/o calve incorrecta" con js en el obj ".message"
+         if(!$password_hash){
+          $message["data"] = "incorrect";
+          $message["rol"] = "client";
+         }
+
+        } 
+        
+        
+        else {
+          
+          $message["data"]= "incorrect"; //mostrara un sms de "usario y/o calve incorrecta" con js en el obj ".message"
+           echo json_encode($message);
      }
 
 
-    }catch(PDOException $e){
-        $message = "error al conectar con la BBDD clientes: " .$e->getMessage();
-  }
-  
-  finally{
-      echo json_encode($message);
       
-    }
+    
     
 
 
