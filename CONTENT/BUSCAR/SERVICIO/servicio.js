@@ -57,3 +57,7 @@ const getParams=async()=>{
 }
 
 getParams();
+
+// 5) El usuario debe saber QUE dias puede contratar un servicio (que dias tiene dispoible el proveedor)
+// 6) Debo crear un "calendario modal" que me permita visaulizar esos dias 
+// 7) al hacer click en esos dias, se debe elegir hora para realizar ese servicio 
