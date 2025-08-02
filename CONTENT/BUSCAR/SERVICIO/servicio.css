@@ -243,3 +243,10 @@ body {
         padding: 20px;
     }
 }
+
+#coment{
+
+    position: relative;
+    z-index: 100;
+    color: green;
+}

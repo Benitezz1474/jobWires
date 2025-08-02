@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 header('Content-Type: application/json'); // Establece el tipo de contenido como JSON
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -39,8 +42,11 @@ $message = [
             "data" => "success",
             "rol" => $rol ?? "client"
           ];
+          
+          //antes de mandar el veredicto, almaceno la CI del usuario
+          $_SESSION["CI"] = $result["CiUsuario"];
+          
           echo json_encode($message);
-          //  $_SESSION["email"] = $email;
           //  $message = "success"; //equivalente a header("location: url") ya que esto se manda a JS y se trabaja ahí para mayor seguridad
          }
 

@@ -3,7 +3,7 @@ export const sendHTTPrequest =async(url,options)=>{ //mando los datos al server 
 
     
     const res = await fetch(url,options);
-    const data = await res.json();
+    const data = await res.text();
     //pintar y quitar spinner
     console.log("mostrando informacion...")
     console.log(data)

@@ -1,4 +1,5 @@
 <?php 
+session_start(); //inicio una sesion
 
 header('Content-Type: application/json'); // Establece el tipo de contenido como JSON (configurarcion)
 $data = json_decode(file_get_contents('php://input'), true); //obtengo los datos JSON y los trabajo como array_assoc
@@ -19,6 +20,10 @@ try{
     $rol = $data["rol"] ?? "client";
     $password_prepare = password_hash($password,PASSWORD_DEFAULT); //clave encriptada
     
+    //guardo el nombre de la persona y la CI
+    $_SESSION["CI"] = $CI;
+    $_SESSION["name"] = $name;
+
  $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
 
  $sql = "SELECT * FROM usuario WHERE Email = :em";

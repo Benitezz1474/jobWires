@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>SERVICIO</h1>
+    <h1 id="coment">SERVICIO</h1>
 
     <!-- SERVICIO -->
      <div id="service">
@@ -21,12 +21,25 @@
 
     
     <br>
-    <form action="#">
+    <form action="#" id="formComent">
         <input type="text" name="coment" id="coment">
-        <input type="submit" value="Comentar">
+        <input type="submit" value="Comentar" id="comentar" name="comentar">
     </form>
    
-    <script type="module" src="./servicio.js"></script>
-    <script src="comentar.js"></script>
+    <!-- se renderiza un texto cuando se envia el comentario -->
+     <h1 id="comentText"></h1>
+
+     <!-- SE RENDERIZAN los ultimos 5 comentarios de la BBDD -->
+      <div id="comentsBBDD">
+         <ul>
+             <!-- LI desde js -->
+         </ul>
+      </div>
+
+    <script type="module" src="./comentar.js"></script><!-- inserta los comentarios en la BBDD --> 
+    <script type="module" src="./comentarios.js"></script><!-- renderiza los comentarios --> 
+    <script type="module" src="./servicio.js"></script> <!-- renderiza la informacion del servicio --> 
+    
+    <script type="module" src="./contrata.js"></script> <!-- guarda el servicio en la BBDD --> 
 </body>
 </html>
