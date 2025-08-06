@@ -9,6 +9,8 @@ const btn_contrata = document.getElementById("contratar");
 const printHTTPrequest=(result)=>{
 
     console.log(result)
+
+    alert("SERVICIO CONTRATADO CORRECTAMENTE");
 }
 
 const getServiceID=()=>{//obtengo el ID del servicio que viaja por la URL

@@ -21,7 +21,6 @@ export const printHTTPrequest=async(data_res,href)=>{
 
 
     if(data == "success") {
-        alert("operando...");
         const email = document.getElementById("email");//obtengo el email para crear una sesion
         sessionStorage.setItem("email",email.value);
         message.style.display="none"; //lo quito para que "no moleste"

@@ -49,12 +49,21 @@ try{
 
   
     $stmt_insert->execute();
-
-    $message = [
-        "data" => "success",
-        "rol" => $rol ?? "client"
-    ];
-
+    
+    // DEBO INSERTAR EN LA TABLA CLIENTE ANTES DE HACER EL ECHO JSONENCODE
+    
+    $stmt_insert = null;
+    
+    $sql_insert_client = "INSERT INTO cliente VALUES (?)";
+    $stmt_client = $link->prepare($sql_insert_client);
+    $stmt_client->bindParam(1,$CI);
+    $stmt_client->execute();
+    
+    
+        $message = [
+            "data" => "success",
+            "rol" => $rol ?? "client"
+        ];
  }
 
 else  if($stmt->rowCount() > 0){
