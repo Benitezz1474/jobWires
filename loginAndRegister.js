@@ -5,7 +5,7 @@ export const sendHTTPrequest =async(url,options)=>{ //mando los datos al server 
     const res = await fetch(url,options);
     const data = await res.text();
     //pintar y quitar spinner
-    console.log("mostrando informacion...")
+    console.log("lo que devuelve la BBDD:")
     console.log(data)
     return data
 }
@@ -16,13 +16,12 @@ export const printHTTPrequest=async(data_res,href)=>{
     const message = document.querySelector(".message"); //en esto voy a pintar los errores
     message.style.display="block";//lo hagovisible por si puede haber algun error
     
-    const {data,rol} = data_res
+    const {data,rol} = await data_res;
     // const data = await sendHTTPrequest(url,options); //obtengo los datos del servidor
-    
-    console.log(data_res);
-    // console.log(rol_res);
+
 
     if(data == "success") {
+        alert("operando...");
         const email = document.getElementById("email");//obtengo el email para crear una sesion
         sessionStorage.setItem("email",email.value);
         message.style.display="none"; //lo quito para que "no moleste"

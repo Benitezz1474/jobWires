@@ -35,7 +35,7 @@ btn_contrata.addEventListener("click",async()=>{ //al hacer click debo contratar
  }
 
 
- const result = await sendHTTPrequest("contrata.php",options);
+const result = await sendHTTPrequest("contrata.php",options);
 printHTTPrequest(result)
 
 })

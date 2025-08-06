@@ -27,7 +27,7 @@ const getComents=async()=>{
     
 //prepara y envia la consulta
 const coments = await sendHTTPrequest("./comentarios.php",options);
-printComents(coments);
+printComents(JSON.parse(coments));
 }
 
 getComents();

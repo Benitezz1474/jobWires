@@ -175,7 +175,7 @@ const options = {
 const services = await sendHTTPrequest("./busca.php",options);
 console.log("services:");
 
-printServices(services);
+printServices(JSON.parse(services));
 
 
 
