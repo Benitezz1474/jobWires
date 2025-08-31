@@ -12,7 +12,7 @@ const printService=(service)=>{
     console.log(service)
     const serviceDOM = document.getElementById("service"); //selecciono el DOM element
 
-    const {Direccion,titulo,Precio,Descripcion,Ubicacion,Imagen,fecha} = service;
+    const {Direccion,titulo,Precio,Descripcion,Ubicacion,Imagen,FechaPublicacion} = service;
 
     //plantilla del servicio
     serviceDOM.innerHTML = `
@@ -20,9 +20,8 @@ const printService=(service)=>{
     <h2>${titulo}</h2>
     <h3>Descripcion :${Descripcion}<h3>
     <h3>ubicacion: ${Ubicacion}<h3>
-    <h3>Direccion: ${Direccion}<h3>
     <h3>Precion: ${Precio}<h3>
-    <h3>Fecha: ${fecha}<h3>
+    <h3>Fecha: ${FechaPublicacion}<h3>
 
     <img src = '${Imagen}' />
     
@@ -52,7 +51,7 @@ const getParams=async()=>{
 
     //pintar el servicio
 
-    printService(service);
+    printService(JSON.parse(service));
 
 }
 

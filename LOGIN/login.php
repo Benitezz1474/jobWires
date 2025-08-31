@@ -18,7 +18,7 @@ $message = [
 ];
 
      //coneixion a la base de datos y demas
-     $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
+     $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
 
  $sql = "SELECT * FROM usuario WHERE Email = :em";
 
@@ -40,7 +40,7 @@ $message = [
 
           $message = [
             "data" => "success",
-            "rol" => $rol ?? "client"
+            "rol" => $rol ?? "Cliente"
           ];
           
           //antes de mandar el veredicto, almaceno la CI del usuario
@@ -52,7 +52,7 @@ $message = [
 
          if(!$password_hash){
           $message["data"] = "incorrect";
-          $message["rol"] = "client";
+          $message["rol"] = $result["Rol"] ?? "undefined";
          }
 
         } 

@@ -11,10 +11,16 @@ export const delteService=async(id)=>{
 
 
     const options = {
-        mehod : "POST",
-        headers : {"Content-type" : "application/json"},
+        method : "POST",
+        header : {"Content-type" : "application/json"},
         body : JSON.stringify({id : id})
     }
-    const result = sendHTTPrequest("./deleteService.php",options);
+    const result = await sendHTTPrequest("./deleteService.php",options);
+
+    if(JSON.parse(result) == "success"){
+
+        alert("eliminado");
+        window.location.href = window.location.href;
+    }
     
 }

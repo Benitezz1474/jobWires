@@ -17,27 +17,26 @@ const getServiceID=()=>{//obtengo el ID del servicio que viaja por la URL
 
     const params = new URLSearchParams(window.location.search); 
     const id = params.get("id");
-    console.log(id)
+    // console.log(id)
     return Number(id);
 }
 
 btn_contrata.addEventListener("click",async()=>{ //al hacer click debo contratar el servicio
 
- const data = {//necesitaria el ID del usuario (CI) pero está almacenado en la session ;)
+ const data = {//necesitaria el ID del usuario (CI) pero está almacenado en la session(PHP) ;)
   
     idService : getServiceID()
 
  }
 
- const options = {
-
-    method : "POST",
-    headers : {"content-type":"application/json"},
-    body : JSON.stringify(data)
- }
-
-
-const result = await sendHTTPrequest("contrata.php",options);
+    const options = {
+        method : "POST",
+        header : {"content-type" : "application/json"},
+        body : JSON.stringify(data)
+}
+    
+//prepara y envia la consulta
+const result = await sendHTTPrequest("./contrata.php",options);
 printHTTPrequest(result)
 
 })

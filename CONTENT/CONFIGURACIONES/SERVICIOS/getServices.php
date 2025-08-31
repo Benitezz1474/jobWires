@@ -8,11 +8,25 @@ $data = json_decode(file_get_contents('php://input'), true); //obtengo los datos
 $message = "error";
 
 try{
-$link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
-$sql = "SELECT s.* 
-        FROM contrata c
-        JOIN servicio s ON c.IdServicio = s.IdServicio
-        WHERE c.IdCliente = ?";
+$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+
+$sql = "SELECT 
+    c.CiCliente,
+    u.Nombre AS NombreCliente,
+    p.IdPublicacion,
+    p.Titulo AS Servicio,
+    p.Descripcion,
+    p.Precio,
+    ct.FechaHora,
+    ct.Comentario,
+    ct.Puntaje
+FROM contrata ct, cliente c, publicacion p, usuario u
+WHERE ct.CiCliente = c.CiCliente
+  AND ct.IdPublicacion = p.IdPublicacion
+  AND c.CiCliente = u.CiUsuario
+  AND c.CiCliente = ?
+ORDER BY ct.FechaHora DESC";
+
 
 $stmt = $link -> prepare($sql);
 $stmt -> bindParam(1,$_SESSION["CI"]);

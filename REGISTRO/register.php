@@ -17,14 +17,14 @@ try{
     $surname = $data["surname"];
     $email = $data["email"];
     $password = $data["password"];
-    $rol = $data["rol"] ?? "client";
+    $rol = $data["rol"] ?? "Cliente";
     $password_prepare = password_hash($password,PASSWORD_DEFAULT); //clave encriptada
     
     //guardo el nombre de la persona y la CI
     $_SESSION["CI"] = $CI;
     $_SESSION["name"] = $name;
 
- $link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
+ $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
 
  $sql = "SELECT * FROM usuario WHERE Email = :em";
 
@@ -37,15 +37,15 @@ try{
     //insertar
 
     //esta consulta se le debe asignar un rol para insertar en la BBDD
-    $sql_insert = "INSERT INTO usuario (CiUsuario,Nombre,Apellido,Email,Contraseña,Rol) VALUES (?,?,?,?,?,?)";
+    $sql_insert = "INSERT INTO usuario (CiUsuario,Rol,Nombre,Apellido,Email,Contraseña) VALUES (?,?,?,?,?,?)";
 
     $stmt_insert = $link->prepare($sql_insert);
     $stmt_insert->bindParam(1,$CI);
-    $stmt_insert->bindParam(2,$name);
-    $stmt_insert->bindParam(3,$surname);
-    $stmt_insert->bindParam(4,$email);
-    $stmt_insert->bindParam(5,$password_prepare);
-    $stmt_insert->bindParam(6,$rol);
+    $stmt_insert->bindParam(2,$rol);
+    $stmt_insert->bindParam(3,$name);
+    $stmt_insert->bindParam(4,$surname);
+    $stmt_insert->bindParam(5,$email);
+    $stmt_insert->bindParam(6,$password_prepare);
 
   
     $stmt_insert->execute();

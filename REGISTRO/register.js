@@ -93,12 +93,12 @@ form_register.addEventListener("submit",async(e)=>{
               
                   const data_info = await sendHTTPrequest("./register.php",options);
                   const {rol} = JSON.parse(data_info);
-                  console.log(rol); 
+                  console.log("rol:" + rol); 
 
                   //dependiendo del rol, lo manda a un contenido distinto
-                  if(rol == "client") printHTTPrequest(JSON.parse(data_info),"../CONTENT/CONFIGURACIONES/PERFIL/index.html"); //ya tiene un manejo de excepciones ;)
-                  else if(rol == "proveedor") printHTTPrequest(JSON.parse(data_info),"../CONTENT_PROVIDER/index.php"); //ya tiene un manejo de excepciones ;)
-                  else if(rol == "admin") printHTTPrequest(JSON.parse(data_info),"../CONTENT_ADMIN/index.php"); //ya tiene un manejo de excepciones ;)
+                  if(rol == "Cliente") printHTTPrequest(JSON.parse(data_info),"../CONTENT/CONFIGURACIONES/PERFIL/index.html"); //ya tiene un manejo de excepciones ;)
+                  else if(rol == "Proveedor") printHTTPrequest(JSON.parse(data_info),"../CONTENT_PROVIDER/index.php"); //ya tiene un manejo de excepciones ;)
+                  else if(rol == "AdminGestion") printHTTPrequest(JSON.parse(data_info),"../CONTENT_ADMIN/index.php"); //ya tiene un manejo de excepciones ;)
                   
             }
         

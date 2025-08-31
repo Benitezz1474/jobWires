@@ -15,11 +15,11 @@ $message = "error";
 
 try{
 //realizo la conexion a la BBDD
-$link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
+$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
 
 //creo la consulta con los filtros
 // $sql = "SELECT * FROM servicio WHERE titulo = :titulo AND Ubicacion = :Ubicacion";
-$sql = "SELECT * FROM servicio WHERE titulo LIKE :titulo";
+$sql = "SELECT * FROM publicacion WHERE Titulo LIKE :titulo";
 
 //PHP no permite el ingreso de caracteres SQL especiales directamente, por eso agrego
 //estas variables de este modo

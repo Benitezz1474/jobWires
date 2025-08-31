@@ -14,25 +14,16 @@ const printServices=(services=[])=>{
     services.forEach(service => {
 
         console.log(service)
-        const {
-            Descripcion,
-            Direccion,
-            IdServicio,
-            Imagen,
-            Precio,
-            Ubicacion,
-            fecha,
-            id_usuario,
-            titulo
-        } = service;
+        
+        const {IdPublicacion,Servicio} = service;
 
 
         
-        //crear un enlace
+        //crear un boton para ver los servicios
         const button_show = document.createElement("button");
         button_show.innerHTML = "VER";
         button_show.addEventListener("click",()=>{
-            window.location.href = `http://localhost/jobsWebSite/CONTENT/BUSCAR/SERVICIO/index.html?id=${IdServicio}`;
+            window.location.href = `http://localhost/jobsWebSite/CONTENT/BUSCAR/SERVICIO/index.html?id=${IdPublicacion}`;
         })
         
         //contenedor donde van a ir todos los items
@@ -42,15 +33,26 @@ const printServices=(services=[])=>{
         //crear un boton para eliminar el servicio
         const button_delete = document.createElement("button");
         button_delete.innerHTML = "ELIMINAR";
-        button_delete.addEventListener("click",()=> delteService(IdServicio));
+        button_delete.addEventListener("click",()=> delteService(IdPublicacion));
+
+        //crear un boton para enviar mensaje
+
+        const button_message = document.createElement("button");
+        button_message.innerHTML = "MESSAGE";
+        button_message.addEventListener("click",()=>{
+            window.location.href = `http://localhost/jobsWebSite/CONTENT/CHAT/index.html?idUser=${IdPublicacion}&idService=${IdServicio}`;
+        })
+
+        //----------------------------------
 
         const h2 = document.createElement("h2");
-        h2.innerHTML = titulo;
+        h2.innerHTML = Servicio;
 
         div.appendChild(h2)
-        div.appendChild(button_delete)
         div.appendChild(button_show);
-        fragment.appendChild(div)
+        div.appendChild(button_delete)
+        div.appendChild(button_message);
+        fragment.appendChild(div);
 
 
         

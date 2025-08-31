@@ -11,9 +11,9 @@ $message = [
 $idServicio = $data["id"];
 
 //realizo la conexion a la BBDD
-$link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
+$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
 
-$sql = "SELECT * FROM servicio WHERE IdServicio = ?";
+$sql = "SELECT * FROM publicacion WHERE IdPublicacion = ?";
 
 $stmt = $link->prepare($sql);
 $stmt -> bindParam(1,$idServicio);
