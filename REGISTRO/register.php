@@ -51,14 +51,25 @@ try{
     $stmt_insert->execute();
     
     // DEBO INSERTAR EN LA TABLA CLIENTE ANTES DE HACER EL ECHO JSONENCODE
+
+    if($rol == "Cliente"){
+
+        
+        
+        $sql_insert_client = "INSERT INTO cliente VALUES (?)";
+        $stmt_client = $link->prepare($sql_insert_client);
+        $stmt_client->bindParam(1,$CI);
+        $stmt_client->execute();
+    }
+    
+    else{
+        $sql_insert_proveedor = "INSERT INTO proveedor (CiProveedor) VALUES (?)";
+        $stmt_proveedor = $link->prepare($sql_insert_proveedor);
+        $stmt_proveedor->bindParam(1,$CI);
+        $stmt_proveedor->execute();
+    }
     
     $stmt_insert = null;
-    
-    $sql_insert_client = "INSERT INTO cliente VALUES (?)";
-    $stmt_client = $link->prepare($sql_insert_client);
-    $stmt_client->bindParam(1,$CI);
-    $stmt_client->execute();
-    
     
         $message = [
             "data" => "success",

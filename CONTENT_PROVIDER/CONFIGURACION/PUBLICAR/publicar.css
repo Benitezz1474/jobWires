@@ -1,0 +1,36 @@
+.subContent form{ /*form*/
+
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(100,100,100,0.2);
+    margin-left: 10px;
+   
+}
+
+.subContent form input{
+
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    outline: 1px solid rgba(72, 72, 72, 0.2);
+    border-radius: 5px;
+}
+
+.subContent form textarea{
+
+    resize: none;
+    display: block;
+    margin: 5px auto;
+    width: 80%;
+    height: 6cm;
+    border: none;
+    outline: 1px solid rgba(72, 72, 72, 0.2);
+}
+
+.subContent form input[type="submit"]{
+    background-color: #48e;
+    color: #fff;
+    cursor: pointer;
+}

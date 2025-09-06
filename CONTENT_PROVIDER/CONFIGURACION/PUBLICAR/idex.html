@@ -6,14 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../../general.css">
     <link rel="stylesheet" href="../../../CONTENT/CONFIGURACIONES/configuraciones.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./publicar.css">
+  </head>
+  <body>
+    
     <header class="header">
     <nav class="nav">
             <div class="logo">jobWires</div>
             <ul class="nav-links">
-                 <li><a href="../../../index.html">Inicio</a></li>
+              <li><a href="../../../index.html">Inicio</a></li>
                  <li><a href="">Chat</a></li>
                     <li id="navSelect"><a href="./CONFIGURACION/SERVICIOS/index.html" >Configuraciones</a></li>
             </ul>
@@ -22,24 +23,33 @@
 
   <section>
     <div class="subNav">
-        <nav>
+      <nav>
        <ul>
          <li><a href="../USUARIO/index.html">Perfil</a></li>
-        <li><a href="../SERVICIOS/index.html">Mi servicios</a></li>
+         <li><a href="../SERVICIOS/index.html">Mi servicios</a></li>
         <li><a href="../NOTIFICACION/index.html">Notificacion</a></li>
         <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
         <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
         <li id="subNavSelect"><a href="./idex.html">Publicar Servicio</a></li>
         <li><a href="../SESION/index.html">Cerrar Sesion</a></li>
        </ul>
-    </nav>
+      </nav>
     </div>
-
-    <div class="subContent">
-        
-    </div>
-
-  </section>
     
+    <div class="subContent">
+      <form action="#" id="formToPublic">
+        <input type="text" name="title" id="title" placeholder="Titulo">
+        <!-- <input type="" name="description" id="description" placeholder="descripcion"> -->
+        <textarea name="description" id="description" placeholder="Descripcion breve"></textarea>
+        <input type="text" name="price" id="price" placeholder="Precio (ejemplo: 10)">
+        <input type="text" name="ubication" id="ubication" placeholder="Ubicacion (ejemplo: Narnia)">
+        <input type="submit" id="send" value="Publicar">
+      </form>
+      <div id="message"></div>
+    </div>
+    
+  </section>
+  
 </body>
+<script type="module" src="./publicar.js"></script>
 </html>
