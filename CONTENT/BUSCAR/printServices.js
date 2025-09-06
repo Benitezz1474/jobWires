@@ -9,12 +9,12 @@ export const printServices = (array = []) => {
   let html = "";
 
   array.forEach((item, index) => {
-    const {titulo,Direccion,Descripcion,Precio,IdPublicacion} = item;
+    const {Titulo,Ubicacion,Descripcion,Precio,IdPublicacion} = item;
     html += `
       <div class='services__item'>
         <a href = 'SERVICIO/index.html?id=${IdPublicacion}'>
-        <h2>${titulo}</h2>
-        <h2>${Direccion}</h2>
+        <h2>${Titulo}</h2>
+        <h2>${Ubicacion}</h2>
         <h2>${Precio}</h2>
         <h2>${Descripcion}</h2>
         </a>

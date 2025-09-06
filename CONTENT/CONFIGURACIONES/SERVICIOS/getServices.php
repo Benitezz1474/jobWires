@@ -11,16 +11,12 @@ try{
 $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
 
 $sql = "SELECT 
+    m.CiProveedor,
     c.CiCliente,
     u.Nombre AS NombreCliente,
     p.IdPublicacion,
-    p.Titulo AS Servicio,
-    p.Descripcion,
-    p.Precio,
-    ct.FechaHora,
-    ct.Comentario,
-    ct.Puntaje
-FROM contrata ct, cliente c, publicacion p, usuario u
+    p.Titulo AS Servicio
+FROM contrata ct, cliente c, publicacion p, usuario u, proveedor m
 WHERE ct.CiCliente = c.CiCliente
   AND ct.IdPublicacion = p.IdPublicacion
   AND c.CiCliente = u.CiUsuario

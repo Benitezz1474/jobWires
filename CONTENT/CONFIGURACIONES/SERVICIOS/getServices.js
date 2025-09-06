@@ -15,7 +15,7 @@ const printServices=(services=[])=>{
 
         console.log(service)
         
-        const {IdPublicacion,Servicio} = service;
+        const {IdPublicacion,Servicio,CiProveedor,CiCliente} = service;
 
 
         
@@ -40,7 +40,7 @@ const printServices=(services=[])=>{
         const button_message = document.createElement("button");
         button_message.innerHTML = "MESSAGE";
         button_message.addEventListener("click",()=>{
-            window.location.href = `http://localhost/jobsWebSite/CONTENT/CHAT/index.html?idUser=${IdPublicacion}&idService=${IdServicio}`;
+            window.location.href = `http://localhost/jobsWebSite/CONTENT/CHAT/index.html?CiCliente=${CiCliente}&idService=${IdPublicacion}&CiProveedor=${CiProveedor}`;
         })
 
         //----------------------------------
