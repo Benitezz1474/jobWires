@@ -27,7 +27,7 @@ try{
 
  $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
 
-//  $sql = "SELECT * FROM publicacion WHERE IdPuliblicacion = :em";
+//INSERTAR EN SERVICIO
 $sql = "INSERT INTO publicacion (Titulo,Descripcion,Precio,Ubicacion,FechaPublicacion,CiProveedor) VALUES 
        (:Titulo,:Descripcion,:Price,:Ubicacion,NOW(),:Ci)";
 
@@ -40,6 +40,23 @@ $sql = "INSERT INTO publicacion (Titulo,Descripcion,Precio,Ubicacion,FechaPublic
  $stmt->bindParam(":Ci",$CI);
 
  $stmt->execute();
+
+ $sql = null;
+
+//INSERTAR EN OFRECE
+$sql_ofrece = "INSERT INTO ofrece (ciProveedor) VALUES (?)";
+$stmt_ofrece = $link->prepare($sql_ofrece);
+$stmt_ofrece -> bindParam(1,$CI);
+$stmt_ofrece->execute();
+
+
+//CIERRO TODAS LAS CONEXIONES Y DEMAS
+$link = null;
+$stmt = null;
+$stmt_client = null;
+$stmt_insert = null;
+$stmt_ofrece = null;
+
 
  //SI YA TENES LA TABLA DE LEANDRO ENTONCES HACELO
  

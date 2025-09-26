@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiServicio</title>
     <link rel="stylesheet" href="servicio.css">
+    <link rel="stylesheet" href="../../../general.css">
 </head>
 <body>
+
+       <header class="header">
+    <nav class="nav">
+            <div class="logo">JobWires</div>
+            <div id="btn_nav"></div>
+            <ul class="nav-links">
+                 <li><a href="../index.html">Inicio</a></li>
+                    <li id="navSelect"><a href="../REGISTRO/register.html" >Buscar</a></li>
+                    <li><a href="../CHAT/index.html" >Chat</a></li>
+                    <li><a href="../CONFIGURACIONES/PERFIL/index.html" >Configuraciones</a></li>
+            </ul>
+        </nav>
+  </header>
 
     <h1 id="coment">SERVICIO</h1>
 
     <!-- SERVICIO -->
-     <div id="service">
-        
-     </div>
+     <div id="service"></div>
 
     <button id="contratar">CONTRATAR</button>
     <br>
@@ -21,10 +33,10 @@
 
     
     <br>
-    <form action="#" id="formComent">
+    <!-- <form action="#" id="formComent"> 
         <input type="text" name="coment" id="coment">
         <input type="submit" value="Comentar" id="comentar" name="comentar">
-    </form>
+    </form> -->
    
     <!-- se renderiza un texto cuando se envia el comentario -->
      <h1 id="comentText"></h1>
@@ -42,4 +54,5 @@
     
     <script type="module" src="./contrata.js"></script> <!-- guarda el servicio en la BBDD --> 
 </body>
+<script src="../../../navSwitched.js"></script>
 </html>

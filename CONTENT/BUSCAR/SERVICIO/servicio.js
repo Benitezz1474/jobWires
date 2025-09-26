@@ -12,12 +12,12 @@ const printService=(service)=>{
     console.log(service)
     const serviceDOM = document.getElementById("service"); //selecciono el DOM element
 
-    const {Direccion,titulo,Precio,Descripcion,Ubicacion,Imagen,FechaPublicacion} = service;
+    const {Direccion,Titulo,Precio,Descripcion,Ubicacion,Imagen,FechaPublicacion} = service;
 
     //plantilla del servicio
     serviceDOM.innerHTML = `
        
-    <h2>${titulo}</h2>
+    <h2>${Titulo}</h2>
     <h3>Descripcion :${Descripcion}<h3>
     <h3>ubicacion: ${Ubicacion}<h3>
     <h3>Precion: ${Precio}<h3>

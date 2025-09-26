@@ -9,19 +9,18 @@
 
 #navSelect{
     background-color: #fff;
-    color: #48e;
+    color: #000;
     border-radius: 10px;
 }
 
+#navSelect a{
+    color: #000;
+}
+
 :root {
-  --primary-color: #667eea;
-  --primary-dark: #5a67d8;
-  --secondary-color: #4465c2;
-  --gradient-bg: linear-gradient(135deg, #667eea 0%, #0253ea 100%);
-  --text-primary: #2d3748;
-  --text-secondary: #718096;
-  --border-color: rgba(255,255,255,0.2);
-  --backdrop-blur: blur(20px);
+ --blue: #48e;
+ --violet:rgb(202, 26, 202);
+
 }
 
 body {
@@ -30,21 +29,26 @@ body {
     color: #1e40af;
     overflow-x: hidden;
     /* background-color: #92baff; */
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 /*===== HEADER Y NAVEGACIÓN =====*/
 
 .header {
-    background: linear-gradient(135deg, #feffffba 0%, #72b0fc 100%);
+    background-color: var(--blue);
+    /* background: linear-gradient(135deg, #feffffba 0%, #72b0fc 100%); */
     color: #1e40af;
     padding: 1rem 0;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(77, 143, 223, 0.3);
+}
+
+header h2{
+    color: #fff;
 }
 
 .nav {
@@ -56,14 +60,6 @@ body {
     padding: 0 2rem;
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, #1e40af, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
 
 .nav-links {
     display: flex;
@@ -72,7 +68,7 @@ body {
 }
 
 .nav-links a {
-    color: #1e40af;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -124,6 +120,11 @@ body {
     position: relative;
     max-width: 800px;
     padding: 0 2rem;
+}
+
+#btn_nav{
+
+    display: none;
 }
 
 .hero h1 {
@@ -354,7 +355,7 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    background: var(--blue);
     color: #ffffff;
     padding: 3rem 0 1rem;
 }
@@ -401,8 +402,55 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+
+
+    /*BTN NAV*/
+    #btn_nav{
+
+        display: block;
+        padding: 20px;
+        background-color: rgb(51, 148, 153);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /*NAV*/
     .nav-links {
-        display: none;
+        position: absolute;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        background: var(--blue);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s;
+        z-index: 10;
+    }
+
+     /*CON JS TOGGLE*/
+    .nav-links-toggle{
+      left: 0%;
+      transition: all 0.4s;
+
+    }
+
+    #navSelect{
+    background-color: var(--violet);
+    color: #48e;
+    border-radius: 10px;
+}
+    
+
+    .nav-links li{
+
+        padding: 10px 5px;
+        margin: 0;
+        background-color: #48e
+    }
+
+    .nav-links li a{
+
+        color: #fff;
     }
 
     .hero h1 {
@@ -446,9 +494,9 @@ body {
         height: 200px;
     }
 
-    .nav {
+    /* .nav {
         padding: 0 1rem;
-    }
+    } */
 
     .logo {
         font-size: 1.5rem;

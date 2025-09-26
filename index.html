@@ -12,9 +12,10 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <div class="logo">JobsWires</div>
+            <h2>JobWires</h2>
+            <div id="btn_nav"></div>            
             <ul class="nav-links">
-                 <li><a href="./index.html">Inicio</a></li>
+                 <li id="navSelect"><a href="./index.html">Inicio</a></li>
                     <li><a href="REGISTRO/register.html" >Registrarse</a></li>
                 <li><a href="./LOGIN/login.html">login</a></li>
                 <!-- <li><a href="/CONTENT/CONFIGURACIONES/index.html">Ajustes</a></li> -->
@@ -22,33 +23,8 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Encuentra tu trabajo soñado</h1>
-            <p>Conectamos talento con oportunidades. Miles de empleos esperan por ti en las mejores empresas del país.</p>
-            <form class="buscador" id="buscador-container" onsubmit="event.preventDefault(); buscarTrabajo();">
-                <div class="search-container">
-                    <div class="buscador-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" class="icono izquierda" alt="Ícono de búsqueda">
-                        <input type="text" id="busqueda" placeholder="¿Qué trabajo buscas? (ej: Desarrollador, Marketing, Ventas)" autocomplete="off">
-                    </div>
-                    <input type="text" class="location-input" placeholder="¿Dónde? (Ciudad, País)">
-                    <button type="submit"  class="search-btn">Buscar Empleo</button>
-                </div>
-            </form>
-        </div>
-    </section>
 
-    <!-- Slider de Imágenes -->
-    <section class="cover">
-        <ul class="slider">
-           <img src="imagnes/fondo1.jpg" alt="fondo1">
-          <img src="imagnes/fondo2.jpg" alt="fondo2">
-            <img src="imagnes/fondo3.jpg" alt="fondo3">
-            <img src="imagnes/fondo4.jpg" alt="fondo4">
-        </ul>
-    </section>
+    <section class="cover"></section>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -75,7 +51,7 @@
     <!-- Features Section -->
     <section class="features">
         <div class="features-container">
-            <h2 class="section-title">¿Por qué elegir TrabajoPlus?</h2>
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🔍</div>
@@ -115,8 +91,8 @@
     <footer class="footer" id="contacto">
         <div class="footer-container">
             <div class="footer-content">
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">TrabajoPlus</h3>
-                <p style="color: #94a3b8; max-width: 600px; margin: 0 auto;">
+                <h3>Conceptual Scripts</h3>
+                <p>
                     Tu plataforma de confianza para encontrar las mejores oportunidades laborales. Conectamos talento con empresas líderes.
                 </p>
             </div>
@@ -140,4 +116,5 @@
 
     <!-- <script src="script.js"></script> -->
 </body>
+<script src="./navSwitched.js"></script>
 </html>
