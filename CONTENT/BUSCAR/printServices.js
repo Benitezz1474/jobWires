@@ -13,10 +13,9 @@ export const printServices = (array = []) => {
     html += `
       <div class='services__item'>
         <a href = 'SERVICIO/index.html?id=${IdPublicacion}'>
-        <h2>${Titulo}</h2>
-        <h2>${Ubicacion}</h2>
-        <h2>${Precio}</h2>
-        <h2>${Descripcion}</h2>
+        <h2>Titulo: <small>${Titulo}</small></h2>
+        <h4>Zona: <small>${Ubicacion}</small></h4>
+        <h4>Precio: <small>${Precio}</small></h4>
         </a>
 
       </div>

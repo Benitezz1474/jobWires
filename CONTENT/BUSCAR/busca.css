@@ -170,9 +170,28 @@ form input[type="submit"]{
     padding: 10px;
     border-radius: 10px;
     /* margin: 10px; */
-    background-color: #888;
+    background-color: #48e;
 }
 
+.services__item a{
+
+    color: none;
+    text-decoration: none;
+}
+
+.services__item h2{
+
+    color: #fff;
+}
+
+.services__item small{
+
+    color: #eee;
+}
+
+ .services__item h4{
+    color: #eee;
+ }
 
 @media (max-width: 768px) {
 
