@@ -13,24 +13,12 @@ const getParams=(string)=>{//obtengo los parametros de la URL
 
 }
 
-//obtengo el form y el submit del form
-const formSMS = document.getElementById("formSMS");
-// const button_sendMessage = document.getElementById("sendSMS")
 
-
-formSMS.addEventListener("submit",async(e)=>{//esta funcion envia el mensaje a apache y lo trabajon con PHP desde ahí
-    
-    e.preventDefault();
-    
-    //agarro el input (el mensjae, texto)
-    const formData = new FormData(formSMS);
-    const message = formData.get("message");
+const getSMS=async()=>{//esta funcion envia el mensaje a apache y lo trabajon con PHP desde ahí
 
     const data = {
-        message,
         CiCliente : getParams("CiCliente"), //no haría falta porque la tengo en la session PEEERO por si las dudas :)
         CiProveedor : getParams("CiProveedor"),
-        IdServicio : getParams("IdService")
     }
 
     const options = {
@@ -39,11 +27,14 @@ formSMS.addEventListener("submit",async(e)=>{//esta funcion envia el mensaje a a
         body : JSON.stringify(data)
     }
 
-    const res = await sendHTTPrequest("./sendSMS.php",options);
-    const result = document.querySelector(".result");
-    result.innerHTML="Mensaje Enviado Correctamente!";
+    const res = await sendHTTPrequest("./getSMS.php",options);
+    console.log("responseGET: ")
+    console.log(res);
+    // const result_sms = document.querySelector(".result_sms");
     
 
-})
+}
+
+getSMS();
 
 

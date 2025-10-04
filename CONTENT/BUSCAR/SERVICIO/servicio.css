@@ -1,46 +1,151 @@
+/* Estilos generales */
 
-h1{
+
+h1 {
     text-align: center;
+    color: rgb(113, 134, 239);
+    background: transparent;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#service, h1{
-
-    color: black;
-    background-color: rgba(24, 131, 202, 0.317);
-}
-
-
-#service{
-
+/* Contenedor principal de servicios */
+#service {
     width: 100%;
-    max-width: 800px;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    outline: 1px solid rgba(200,200,200,0.9);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    outline: none;
 }
 
-#service h3{
-
-    margin: 10px 0;
-    border: none;
-    /* outline: 1px solid rgba(200,200,200,0.9); */
-    border-radius: 5px;
-    padding: 5px;
+/* Card individual de servicio */
+.services__item {
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
-#contratar{
+.services__item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
 
+
+/* Enlaces dentro de los servicios */
+.services__item a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Títulos y texto */
+.services__item h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.services__item h2::before {
+    content: '🔧';
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    flex-shrink: 0;
+}
+
+.services__item h4 {
+    background: linear-gradient(135deg, #b7cdef 0%, #81a8e8 100%);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 15px 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services__item h4:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los small tags */
+.services__item small {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+.services__item h2 small {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Botón contratar */
+#contratar {
     display: block;
     width: 100%;
-    max-width: 100px;
-    padding: 10px 15px;
+    max-width: 30%;
+    padding: 18px 15px;
     border: none;
-    border-radius: 10px;
-    outline: 1px solid rgba(24, 131, 202, 0.317);
+    border-radius: 15px;
     color: #fff;
-    background-color: #48e;
-    margin: 20px auto;
-    transform: scale(1.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 25px auto;
+    transform: scale(1);
     cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s;
+    outline: none;
+}
+
+#contratar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .services__item {
+        padding: 20px;
+    }
+
+    .services__item h2 {
+        font-size: 22px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services__item h2::before {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
 }

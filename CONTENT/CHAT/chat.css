@@ -1,88 +1,28 @@
-.chats_content{
-
+.chat{
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 50px auto;
-    border: 1px solid red;
-    height: auto;
+    border: none;
+    outline: 1px solid red;
+    border-radius: 10px;
     padding: 20px;
 
-    display: grid;
-    grid-template-columns: minmax(50px,120px) minmax(300px,1fr);
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.chats_content div:last-child{
-    height: 100%;
-    position: relative;
-}
+form{
 
-.chats_content div:last-child form{
-
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* SOLO ES UNA PRUEBA, ELOMINAR LUEGO */
-.chats_content_item{
+form input[type="submit"]{
 
-    background-color: blue;
-}
-
-.chat_item{
-    background: rgb(53, 53, 54);
-    padding: 20px 0;
-    margin: 10px 0;
-    /* padding: 2px 0; */
-    border-radius: 10px;
-}
-
-/* ----------------------------- */
-
-
-.chat{
-
-    background-color: rgb(86, 126, 134);
-}
-
-.chat_client form{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  
-}
-
-.chat_client form input{
-
-    border: none;
-    outline: 1px solid #aaa;
-    border-radius: 3px;
-    padding: 13px 10px;
-    width: 70%;
-    border-radius: 10px;
-
-}
-
-.chat_client form input[type="submit"]{
-
-    background-color: blue;
-    color: #fff;
-    outline: 1px solid #fff;
+    margin: 0 0 0 5px;
     cursor: pointer;
-    max-width: 10%;
-}
-
-
-/* MESSAGE SEND AND MESSAGE RECIVED */
-
-.message{
-
 }

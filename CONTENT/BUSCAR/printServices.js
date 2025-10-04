@@ -8,19 +8,18 @@ export const printServices = (array = []) => {
 
   let html = "";
 
-  array.forEach((item, index) => {
-    const {Titulo,Ubicacion,Descripcion,Precio,IdPublicacion} = item;
-    html += `
-      <div class='services__item'>
-        <a href = 'SERVICIO/index.html?id=${IdPublicacion}'>
-        <h2>Titulo: <small>${Titulo}</small></h2>
+ array.forEach((item, index) => {
+  const {Titulo, Ubicacion, Descripcion, Precio, IdPublicacion} = item;
+  html += `
+    <div class='services__item'>
+      <a href='SERVICIO/index.html?id=${IdPublicacion}'>
+        <h2><small>${Titulo}</small></h2>
         <h4>Zona: <small>${Ubicacion}</small></h4>
-        <h4>Precio: <small>${Precio}</small></h4>
-        </a>
-
-      </div>
-    `;
-  });
+        <h4>Precio: <small>$${Precio}</small></h4>
+      </a>
+    </div>
+  `;
+});
 
 
   container.innerHTML = html; // Convierte el HTML en nodos reales

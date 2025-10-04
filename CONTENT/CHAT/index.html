@@ -22,43 +22,23 @@
         </nav>
   </header>
 
-  <!-- Es donde estan todos los chats de TODOS de los servicios que contrata -->
-  <div class="chats_content">
-<!-- contenido de ejmplo, SE DEBE ELIMINAR LUEGO -->
-     <div class="chats_content_item">
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-      <div class="chat_item"></div>
-<!-----^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-     </div>
-    <!-- es el chat en si (form). se cargan los sms y se envian -->
-     <div class="chat">
-                  
-            <div class="chat_provider">
-            </div>
 
-           <div class="chat_client">
-               <div class="messagge">
-               <!-- message recibidos/enviados -->
-               <input type="text" name="message" id="" readonly placeholder="Texto de ejemplo">
-            </div>
-            <form action="">
-                <!-- message a enviar -->
-                 <input type="text" name="message_client" id="message_client">
-                 <input type="submit" value="Send" name="Send">
-            </form>
-           </div>
+   <div class="chat">
+    
+    <!-- Se deben cargar los sms de la BBDD con fetchAPI-->
+    <div class="messages"></div>
 
-        </form>
-     </div>
-  </div>
+    <form action="" id="formSMS">
+     <input type="text" name="message" id="message" placeholder="Texto">
+     <input type="submit" value="Send" id="sendSMS">    
+    </form>
+   </div>
+
+   <!-- DESDE JS se muestra la informacion -->
+   <div class="result"></div> 
 
 </body>
 <script type="module" src="./sendSMS.js"></script>
+<script type="module" src="./getSMS.js"></script>
 <script src="../../navSwitched.js"></script>
 </html>
