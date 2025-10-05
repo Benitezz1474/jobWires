@@ -29,7 +29,6 @@ function encryptMessage($message, $key) {
     //acá elijo el largo del vector de inicialización por ser AES, es de 16 Bytes
     //basicamente le está diciendo a openssl cual va a ser el largo del de cada bloque despues del 1er bloque
     $ivlen = openssl_cipher_iv_length($cipher);
-
     
     $iv = openssl_random_pseudo_bytes($ivlen);
 
@@ -43,7 +42,7 @@ function encryptMessage($message, $key) {
     );
 
     // Guardamos juntos: IV + texto
-    return base64_encode($iv . $ciphertext); //esto retorna los datos (convertidos en binario) en base64(ascci)
+    return base64_encode($iv.$ciphertext); //esto retorna los datos (convertidos en binario) en base64(ascci)
 }
 
 $encryptedMessage = encryptMessage($message, $key); //mensaje encriptado

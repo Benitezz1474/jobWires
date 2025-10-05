@@ -2,82 +2,87 @@
 session_start();
 
 header("Content-Type: application/json");
-$data = json_decode(file_get_contents("php://input"),true);
+$data = json_decode(file_get_contents("php://input"), true);
 
-//Obtengo los datos que me manda el fetch
+// Obtengo los datos que me manda el fetch
 $CiProveedor = $data["CiProveedor"];
 $CiCliente = $data["CiCliente"] ?? $_SESSION["CI"];
-// $message = $data["message"];
 
-
-//esta es la clave del hash para utiliazar en el openSSL
+// Esta es la clave del hash para utilizar en el openSSL
 $key = "12345678901234567890123456789012"; // 32 caracteres (256bits)
 
+$link = new PDO("mysql:host=localhost;dbname=proyectobd", "root", "admin");
 
-$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+try {
+    
+    // Esta función desencripta el mensaje de la BBDD
+    function decryptMessage($encrypted, $key) {
+        $cipher = "AES-256-CBC";
+        $ivlen = openssl_cipher_iv_length($cipher);
 
-//debo insertar el SMS en la tabla de SMS de la BBDD;
-try{
+        $data = base64_decode($encrypted);
+        
+        // Validar que el dato sea válido - AQUÍ YA NO HAY throw Exception
+        if ($data === false || strlen($data) < $ivlen) {
+            return $encrypted; // Retornar original si no se puede desencriptar
+        }
 
+        // Extraemos IV y ciphertext
+        $iv = substr($data, 0, $ivlen);
+        $ciphertext = substr($data, $ivlen);
 
-//esta funcion desencripta el mensaje de la BBDD
-// function decryptMessage($ciphertext, $key, $iv) {
-//     $cipher = "AES-256-CBC";
-//     return openssl_decrypt($ciphertext, $cipher, $key, OPENSSL_RAW_DATA, $iv);
-// }
+        $decrypted = openssl_decrypt(
+            $ciphertext,
+            $cipher,
+            $key,
+            OPENSSL_RAW_DATA,
+            $iv
+        );
 
+        // Si falla la desencriptación, retornar el mensaje original
+        return $decrypted !== false ? $decrypted : $encrypted;
+    }
+    
+    // Consulta para obtener mensajes entre cliente y proveedor (en ambas direcciones)
+    $sql = "SELECT * FROM mensaje WHERE (emisor = ? AND receptor = ?) OR (emisor = ? AND receptor = ?) ORDER BY fecha ASC";
+    
+    $stmt = $link->prepare($sql);
+    $stmt->bindParam(1, $CiCliente);
+    $stmt->bindParam(2, $CiProveedor);
+    $stmt->bindParam(3, $CiProveedor);
+    $stmt->bindParam(4, $CiCliente);
+    $stmt->execute();
 
-function decryptMessage($encrypted, $key) {
-    $cipher = "AES-256-CBC";
-    $ivlen = openssl_cipher_iv_length($cipher);
+    // Devolver los mensajes
+    $messages = array();
 
-    $data = base64_decode($encrypted);
-    if (strlen($data) < $ivlen) {
-        throw new Exception("El dato cifrado es demasiado corto para contener el IV.");
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+        $messageDecrypted = decryptMessage($row["contenido"], $key);
+        
+        $messages[] = array( //por cada registro (mensaje) obtengo un 
+            "emisor" => $row["emisor"],
+            "receptor" => $row["receptor"],
+            "contenido" => $messageDecrypted, //obtengo el sms pero desencriptado
+            "fecha" => $row["fecha"],
+            "visualizacion" => $row["visualizacion"]
+        );
     }
 
-    // Extraemos IV y ciphertext
-    $iv = substr($data, 0, $ivlen);
-    $ciphertext = substr($data, $ivlen);
+    echo json_encode(array( //le mando un array todo bonito si sale todo bien
+        "success" => true,
+        "messages" => $messages
+    ));
 
-    return openssl_decrypt(
-        $ciphertext,
-        $cipher,
-        $key,
-        OPENSSL_RAW_DATA,
-        $iv
-    );
+} catch (PDOException $e) {
+    echo json_encode(array( //le mando un array todo bonito si sale algo mal
+        "success" => false,
+        "error" => "Error al obtener mensajes: " . $e->getMessage()
+    ));
+} catch (Exception $e) {
+    echo json_encode(array(
+        "success" => false,
+        "error" => "Error al desencriptar: " . $e->getMessage()
+    ));
 }
-    
-//emisor,receptor,fecha,contenido,visualzizacion
-$sql = "SELECT * FROM mensaje WHERE emisor = ? AND receptor = ?";
-
-$stmt = $link->prepare($sql);
-$stmt -> bindParam(1,$CiCliente);
-$stmt -> bindParam(2,$CiProveedor);
-$stmt->execute();
-
-//devolver el sms
-
-$result = ""; //en esta variable tengo que guardar todos los sms del usuario
-
-while($row = $stmt->fetch(PDO::FETCH_ASSOC)){//mientras haya registros (puntero interno)
-
-    $messageNoCripty = decryptMessage($row["contenido"], $key);//esto desencrypta los mensajes
-    $result = $result . $messageNoCripty; //almaceno en "result";
-}
-
-echo json_encode($result);
-
-
-}catch(PDOException $e){
-
-   echo json_encode("error Al Enviar el SMS: " . $e->getMessage());
-}
-
-finally{
-
-    echo json_encode("Mensaje Enviado Correctamente!");
-}
-
 ?>
