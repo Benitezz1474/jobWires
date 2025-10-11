@@ -1,9 +1,4 @@
-
-//1) Tengo que agarrar el form del HTML y capturar los datos
-//2) Tengo que procesar y validar esos datos (inputs) si es que me da el tiempo (espero),
-//3) Tengo que mandar esos datos a apache y trabajarlos desde ahí para insertarlos en la BBDD con PHP
-
-import {sendHTTPrequest} from "../../loginAndRegister.js";
+import {sendHTTPrequest} from "../../../loginAndRegister.js";
 
 const getParams=(string)=>{//obtengo los parametros de la URL
     
