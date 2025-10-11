@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="./chat.css">
+    <link rel="stylesheet" href="../../../general.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav">
+            <h2 class="logo">JobWires</h2>
+            <div id="btn_nav"></div>
+            <ul class="nav-links">
+                 <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../BUSCAR/index.html" >Buscar</a></li>
+                    <li id="navSelect"><a href="../CHAT/index.html" >Chat</a></li>
+                    <li><a href="../CONFIGURACIONES/PERFIL/index.html" >Configuraciones</a></li>
+            </ul>
+        </nav>
+  </header>
+
+
+   <div class="chat">
+    
+    <!-- Se deben cargar los sms de la BBDD con fetchAPI-->
+    <div class="messages"></div>
+
+    <form action="" id="formSMS">
+     <input type="text" name="message" id="message" placeholder="Texto">
+     <input type="submit" value="Send" id="sendSMS">    
+    </form>
+   </div>
+
+   <!-- DESDE JS se muestra la informacion -->
+   <div class="result"></div> 
+
+</body>
+<script type="module" src="./sendSMS.js"></script>
+<script src="../../../navSwitched.js"></script>
+</html>

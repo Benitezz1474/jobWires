@@ -56,8 +56,8 @@ try{
 $sql = "INSERT INTO mensaje VALUES (?,?,NOW(),?,?)";
 
 $stmt = $link->prepare($sql);
-$stmt -> bindParam(1,$CiProveedor);
-$stmt -> bindParam(2,$CiCliente);
+$stmt -> bindParam(1,$CiCliente);
+$stmt -> bindParam(2,$CiProveedor);
 // $stmt -> bindParam(1,); //me lo salto y uso el NOW() function en su lugar 
 $stmt -> bindParam(3,$encryptedMessage); //mensaje encriptado
 $visualizacion = 0; // tinyint(1)
