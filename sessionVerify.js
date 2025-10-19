@@ -2,8 +2,8 @@ export const sessionVerify = () => {
     // Obtener el origen dinámicamente (protocolo + dominio/IP + puerto)
     const baseUrl = window.location.origin;
     
-   const url_registro = `${baseUrl}/REGISTRO/register.html`;
-   const url_login = `${baseUrl}/LOGIN/login.html`;
+   const url_registro = `${baseUrl}/jobWires/REGISTRO/register.html`;
+   const url_login = `${baseUrl}/jobWires/LOGIN/login.html`;
 
     const url_actually = window.location.href;
 
