@@ -2,8 +2,9 @@ export const sessionVerify = () => {
     // Obtener el origen dinámicamente (protocolo + dominio/IP + puerto)
     const baseUrl = window.location.origin;
     
-    const url_registro = `${baseUrl}/jobsWebSite/REGISTRO/register.html`;
-    const url_login = `${baseUrl}/jobsWebSite/LOGIN/login.html`;
+   const url_registro = `${baseUrl}/REGISTRO/register.html`;
+   const url_login = `${baseUrl}/LOGIN/login.html`;
+
     const url_actually = window.location.href;
 
     // Si no existe la sesión PERO está en login o registro, no hace nada
