@@ -1,0 +1,560 @@
+/* ===== RESET Y CONFIGURACIÓN BÁSICA ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+:root {
+    --blue: #48e;
+    --violet: rgba(202, 26, 202, 0);
+    --primary-color: #667eea;
+    --primary-dark: #5a67d8;
+    --secondary-color: #4465c2;
+    --gradient-bg: linear-gradient(135deg, #667eea 0%, #0253ea 100%);
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --border-color: rgba(255,255,255,0.2);
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #1e40af;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    min-height: 100vh;
+}
+
+/*===== HEADER Y NAVEGACIÓN =====*/
+.header {
+    background: linear-gradient(135deg, #feffffba 0%, #72b0fc 100%);
+    color: #1e40af;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(77, 143, 223, 0.3);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#btn_nav {
+    display: none;
+    padding: 20px;
+    background-color: rgb(51, 148, 153);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+#btn_nav::before {
+    content: '☰';
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.918);
+    transform: translateY(-2px);
+    color: #3b82f6;
+}
+
+#navSelect {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+/* ===== SUBCONTENT - CONTENEDOR PRINCIPAL DE NOTIFICACIONES ===== */
+/* Contenedor centrado que aloja toda la interfaz de gestión de notificaciones */
+.subContent {
+    max-width: 800px;
+    margin: 130px auto 0 auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(191, 219, 254, 0.5);
+}
+
+/* Header del contenido */
+/* Contiene el título de la sección y el botón de guardar cambios */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(191, 219, 254, 0.5);
+    padding-bottom: 1rem;
+}
+
+.content-header h1 {
+    font-size: 2rem;
+    color: #1e40af;
+    font-weight: 600;
+    animation: slideInUp 1s ease-out;
+}
+
+/* Botón de guardar */
+/* Botón principal para guardar las preferencias de notificaciones */
+.save-btn {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+.save-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+/* Estado de carga del botón */
+.save-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.save-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Secciones de notificaciones */
+/* Agrupa tipos de notificaciones (generales, email, push, etc.) */
+.notification-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #1e40af;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(191, 219, 254, 0.5);
+    text-align: left;
+}
+
+/* Items de notificación */
+/* Cada fila individual que representa una opción de notificación con toggle */
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(248, 250, 252, 0.8);
+    border: 1px solid rgba(191, 219, 254, 0.5);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 1s ease-out;
+    margin-bottom: 1rem;
+}
+
+.notification-item:nth-child(1) { animation-delay: 0.1s; }
+.notification-item:nth-child(2) { animation-delay: 0.2s; }
+.notification-item:nth-child(3) { animation-delay: 0.3s; }
+.notification-item:nth-child(4) { animation-delay: 0.4s; }
+
+.notification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Icono de notificación */
+/* Icono visual que identifica el tipo de notificación */
+.notification-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+/* Contenido de notificación */
+/* Texto descriptivo (título y descripción) de cada notificación */
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h3 {
+    font-size: 1.1rem;
+    color: #1e40af;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.notification-content p {
+    color: #3b82f6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Toggle switch */
+/* Interruptor on/off para activar o desactivar cada tipo de notificación */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #cbd5e1;
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #3b82f6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Configuración de horarios */
+/* Panel para establecer rangos horarios en los que recibir notificaciones */
+.notification-time-config {
+    background: rgba(248, 250, 252, 0.8);
+    border: 2px solid #e0f2fe;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.time-config-item {
+    margin-bottom: 2rem;
+}
+
+.time-config-item label {
+    display: block;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Inputs de hora para configurar "desde" y "hasta" */
+.time-inputs input[type="time"] {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e0f2fe;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #1e40af;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.time-inputs input[type="time"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.time-inputs span {
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Configuración de frecuencia */
+/* Selector para elegir con qué frecuencia recibir notificaciones */
+.frequency-config {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e0f2fe;
+}
+
+.frequency-config label {
+    display: block;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.frequency-select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e0f2fe;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #1e40af;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.frequency-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.frequency-select:hover {
+    border-color: #60a5fa;
+}
+
+/* Mensajes de estado */
+/* Alertas para mostrar feedback al usuario (éxito o error) */
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+    border-left: 4px solid #dc2626;
+    font-size: 1rem;
+    animation: slideInUp 0.5s ease-out;
+}
+
+.success-message {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+    border-left: 4px solid #16a34a;
+    font-size: 1rem;
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    #btn_nav {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        background: var(--blue);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s;
+        z-index: 10;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-links-toggle {
+        left: 0%;
+        transition: all 0.4s;
+    }
+
+    .nav-links li {
+        padding: 15px 20px;
+        margin: 0;
+        background-color: var(--blue);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links li a {
+        color: #fff;
+        display: block;
+        width: 100%;
+    }
+
+    #navSelect {
+        background-color: var(--violet);
+    }
+
+    .subContent { 
+        max-width: 95%; 
+        padding: 2rem;
+        margin: 110px auto 0 auto;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .content-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .notification-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .notification-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .notification-time-config {
+        padding: 1.5rem;
+    }
+    
+    .time-inputs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .time-inputs span {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    
+    .frequency-select {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .subContent {
+        margin: 100px auto 0 auto;
+        padding: 2rem;
+    }
+
+    .content-header h1 {
+        font-size: 2rem;
+    }
+
+    .notification-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .notification-content p {
+        font-size: 1rem;
+    }
+
+    .time-inputs input[type="time"],
+    .frequency-select {
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+}

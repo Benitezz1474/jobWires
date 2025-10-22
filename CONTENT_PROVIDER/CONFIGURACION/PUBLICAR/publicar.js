@@ -43,5 +43,8 @@ form.addEventListener("submit",async(e)=>{ //funcion para publicar oferta
     // else if(jsonResponse== "user_exist") message.innerHTML = "Algo salió mal, intenta nuevamente!";
 
     else message. innerHTML = "Error FATAL al conectar con la BBDD :(";
+    
+    
+    
 
 })

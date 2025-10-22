@@ -1,14 +1,13 @@
-.subContent form{ /*form*/
-
+/* Estilos del formulario */
+.subContent form{
     padding: 15px;
+    margin-top: 80px;
+    margin-left: 10px;
     border-radius: 10px;
     background-color: rgba(100,100,100,0.2);
-    margin-left: 10px;
-   
 }
 
 .subContent form input{
-
     display: block;
     width: 80%;
     margin: 10px auto;
@@ -19,7 +18,6 @@
 }
 
 .subContent form textarea{
-
     resize: none;
     display: block;
     margin: 5px auto;
@@ -27,10 +25,119 @@
     height: 6cm;
     border: none;
     outline: 1px solid rgba(72, 72, 72, 0.2);
+    border-radius: 5px;
 }
 
 .subContent form input[type="submit"]{
     background-color: #48e;
     color: #fff;
     cursor: pointer;
+}
+
+/* Estilos del calendario */
+.calendario-container {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px auto;
+    max-width: 80%;
+}
+
+.calendario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendario-header button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calendario-header button:hover {
+    background: #0056b3;
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.dia-semana {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+    color: #666;
+}
+
+.dia {
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background: white;
+}
+
+.dia:hover:not(.vacio):not(.pasado) {
+    background: #e3f2fd;
+}
+
+.dia.vacio {
+    background: transparent;
+    cursor: default;
+}
+
+.dia.pasado {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.dia.seleccionado {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.horas-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.hora {
+    padding: 8px;
+    text-align: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.hora:hover {
+    background: #e3f2fd;
+}
+
+.hora.seleccionada {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.fecha-seleccionada {
+    background: #d4edda;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #155724;
 }

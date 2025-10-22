@@ -6,42 +6,94 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../../general.css">
     <link rel="stylesheet" href="../../../CONTENT/CONFIGURACIONES/configuraciones.css">
+  <link rel="stylesheet" href="notificacion.css">
+    <title>JobWires - Notificaciones</title>
 </head>
 <body>
-
     <header class="header">
-    <nav class="nav">
-            <div class="logo">jobWires</div>
+        <nav class="nav">
+            <h2 >JobWires</h2>
             <div id="btn_nav"></div>
             <ul class="nav-links">
-                 <li><a href="../../../index.html">Inicio</a></li>
-                 <li><a href="">Chat</a></li>
-                    <li id="navSelect"><a href="./CONFIGURACION/SERVICIOS/index.html" >Configuraciones</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
+                   <li><a href="../../../CONTENT/CHAT/index.html">Chat</a></li>
+                <li id="navSelect"><a href="./index.html">Configuraciones</a></li>
             </ul>
         </nav>
-  </header>
+    </header>
 
-  <section>
-    <div class="subNav">
-        <nav>
-       <ul>
-         <li><a href="../USUARIO/index.html">Perfil</a></li>
-        <li><a href="../SERVICIOS/index.html">Mi servicios</a></li>
-        <li id="subNavSelect"><a href="./NOTIFICACION/index.html">Notificacion</a></li>
-        <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
-        <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
-        <li><a href="../PUBLICAR/idex.html">Publicar Servicio</a></li>
-        <li><a href="../SESION/index.html">Cerrar Sesion</a></li>
-       </ul>
-    </nav>
-    </div>
+    <section>
+        <div class="subNav">
+            <nav>
+                <ul>
+                    <li><a href="../USUARIO/index.html">Perfil</a></li>
+                    <li><a href="../SERVICIOS/index.html">Mi servicios</a></li>
+                    <li ><a href="./index.html">Notificacion</a></li>
+                    <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
+                    <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
+                     <li><a href="../PUBLICAR/idex.html">Publicar Servicio</a></li>
+                    <li><a href="../SESION/index.html">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <div class="subContent">
-        
-    </div>
+        <div class="subContent">
+            <div class="content-header">
+                <h1>Notificaciones</h1>
+                <button class="save-btn">Guardar cambios</button>
+            </div>
 
-  </section>
-    
+            <div class="notifications-list">
+                <div class="notification-item">
+                    <div class="notification-icon">💬</div>
+                    <div class="notification-content">
+                        <h3>Recibir alertas por nuevos mensajes</h3>
+                        <p>Descripción breve de la opción.</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">📅</div>
+                    <div class="notification-content">
+                        <h3>Recordatorios de servicios próximos</h3>
+                        <p>Descripción breve de la opción.</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">⚠️</div>
+                    <div class="notification-content">
+                        <h3>Actualizaciones del estado del servicio</h3>
+                        <p>Descripción breve de la opción.</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">✅</div>
+                    <div class="notification-content">
+                        <h3>Promociones y noticias de la plataforma</h3>
+                        <p>Descripción breve de la opción.</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../../../navSwitched.js"></script>
 </body>
-<script src="../../../navSwitched.js"></script>
 </html>

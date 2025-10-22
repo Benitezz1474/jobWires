@@ -3,7 +3,7 @@ export const sendHTTPrequest =async(url,options)=>{ //mando los datos al server 
 
     
     const res = await fetch(url,options);
-    const data = await res.text();
+    const data = await res.json();
     //pintar y quitar spinner
     console.log("lo que devuelve la BBDD:")
     console.log(data)

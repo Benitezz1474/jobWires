@@ -1,47 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cerrar Sesión - JobWires</title>
+    <link rel="stylesheet" href="sesion.css">
     <link rel="stylesheet" href="../../../general.css">
     <link rel="stylesheet" href="../../../CONTENT/CONFIGURACIONES/configuraciones.css">
 </head>
 <body>
-
+     <!-- Header -->
     <header class="header">
-    <nav class="nav">
-            <div class="logo">jobWires</div>
+        <nav class="nav">
+            <h2>JobWires</h2>
             <ul class="nav-links">
             <div id="btn_nav"></div>
                  <li><a href="../../../index.html">Inicio</a></li>
-                 <li><a href="">Chat</a></li>
+                   <li><a href="../../../CONTENT/CHAT/index.html">Chat</a></li>
                     <li id="navSelect"><a href="./CONFIGURACION/SERVICIOS/index.html" >Configuraciones</a></li>
             </ul>
         </nav>
-  </header>
+    </header>
 
-  <section>
-    <div class="subNav">
-        <nav>
-       <ul>
-         <li><a href="../USUARIO/index.html">Perfil</a></li>
-        <li><a href="../SERVICIOS/index.html">Mi servicios</a></li>
-        <li><a href="../NOTIFICACION/index.html">Notificacion</a></li>
-        <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
-        <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
-        <li><a href="../PUBLICAR/idex.html">Publicar Servicio</a></li>
-        <li id="subNavSelect"><a href="./SESION/index.html">Cerrar Sesion</a></li>
-       </ul>
-    </nav>
+    <section>
+        <div class="subNav">
+            <nav>
+                <ul>
+                    <li><a href="../USUARIO/index.html">Perfil</a></li>
+                    <li><a href="../SERVICIOS/index.html">Mis servicios</a></li>
+                    <li><a href="../NOTIFICACION/index.html">Notificación</a></li>
+                    <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
+                    <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
+                    <li><a href="../PUBLICAR/idex.html">Publicar Servicio</a></li>
+                    <li id="subNavSelect"><a href="./SESION/index.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="subContent">
+            <div class="logout-container">
+                <div class="logout-icon">🚪</div>
+                
+                <h1 class="logout-title">Cerrar Sesión</h1>
+                <p class="logout-message">
+                    ¿Estás seguro de que deseas cerrar tu sesión en JobWires? 
+                    Podrás volver a iniciar sesión en cualquier momento.
+                </p>
+
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    <div class="user-details">
+                        <div class="user-name" id="userName"></div>
+                        <div class="user-email" id="userEmail"></div>
+                    </div>
+                </div>
+
+                <div class="logout-options">
+                    <button class="btn btn-logout" onclick="confirmarCerrarSesion()">
+                        🚪 Cerrar Sesión
+                    </button>
+                    <a href="../USUARIO/index.html" class="btn btn-cancel">
+                        ← Volver al Perfil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <h3>⚠️ Confirmar Cierre de Sesión</h3>
+            <p>¿Estás completamente seguro de que deseas cerrar tu sesión? 
+               Tendrás que volver a introducir tus credenciales para acceder nuevamente.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-logout" onclick="cerrarSesion()">Sí, Cerrar Sesión</button>
+                <button class="btn btn-cancel" onclick="cancelarCierre()">Cancelar</button>
+            </div>
+        </div>
     </div>
 
-    <div class="subContent">
-        
+    <!-- Notificación -->
+    <div id="notificacion" class="notification">
+        <span id="notificacionTexto">Cerrando sesión...</span>
     </div>
 
-  </section>
-    
 </body>
 <script src="../../../navSwitched.js"></script>
 </html>

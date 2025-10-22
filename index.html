@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrabajoPlus - Plataforma de Oficios</title>
+    <title>JobsWires - Plataforma de Oficios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./general.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -15,16 +15,41 @@
             <h2>JobWires</h2>
             <div id="btn_nav"></div>            
             <ul class="nav-links">
-                 <li id="navSelect"><a href="./index.html">Inicio</a></li>
-                    <li><a href="./REGISTRO/register.html" >Registrarse</a></li>
-                <li><a href="./LOGIN/login.html">login</a></li>
-                <!-- <li><a href="/CONTENT/CONFIGURACIONES/index.html">Ajustes</a></li> -->
+                <li id="navSelect"><a href="./index.html">Inicio</a></li>
+                <li><a href="REGISTRO/register.html">Registrarse</a></li>
+                <li><a href="./LOGIN/login.html">Login</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Encuentra tu trabajo soñado</h1>
+            <p>Conectamos talento con oportunidades. Miles de empleos esperan por ti en las mejores empresas del país.</p>
+        </div>
+    </section>
 
-    <section class="cover"></section>
+    <!-- Slider de Imágenes Ampliado -->
+    <section class="cover">
+        <ul class="slider">
+            <!-- Primer set completo con 5 imágenes -->
+            <li><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=280&fit=crop" alt="Oficina moderna"></li>
+            <li><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=280&fit=crop" alt="Trabajo en equipo"></li>
+            <li><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=280&fit=crop" alt="Tecnología"></li>
+            <li><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=280&fit=crop" alt="Reunión de negocios"></li>
+            <li><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=280&fit=crop" alt="Espacio de trabajo creativo"></li>
+            
+            <!-- Duplicado exacto para loop infinito -->
+            <li><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=280&fit=crop" alt="Oficina moderna"></li>
+            <li><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=280&fit=crop" alt="Trabajo en equipo"></li>
+            <li><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=280&fit=crop" alt="Tecnología"></li>
+            <li><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=280&fit=crop" alt="Reunión de negocios"></li>
+            <li><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=280&fit=crop" alt="Espacio de trabajo creativo"></li>
+            <li><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=280&fit=crop" alt="Oficina colaborativa moderna"></li>
+         <li><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=280&fit=crop" alt="Ambiente de trabajo startup"></li>
+        </ul>
+    </section>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -51,7 +76,7 @@
     <!-- Features Section -->
     <section class="features">
         <div class="features-container">
-            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <h2 class="section-title">¿Por qué elegir JobsWires?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🔍</div>
@@ -91,17 +116,8 @@
     <footer class="footer" id="contacto">
         <div class="footer-container">
             <div class="footer-content">
-                <h3>Conceptual Scripts</h3>
-                <p>
-                    Tu plataforma de confianza para encontrar las mejores oportunidades laborales. Conectamos talento con empresas líderes.
-                </p>
-            </div>
-            <div class="footer-links">
-                <a href="./CONTENT/AYUDA/index.html">Ayuda</a>
-                <a href="#">Términos de Uso</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Para Empresas</a>
-                <a href="#">Blog</a>
+                <h3>JobsWires</h3>
+                <p>Tu plataforma de confianza para encontrar las mejores oportunidades laborales. Conectamos talento con empresas líderes.</p>
             </div>
             <div class="contact-info">
                 <p>📞 Teléfono: +598 99 123 456</p>
@@ -114,7 +130,6 @@
         </div>
     </footer>
 
-    <!-- <script src="script.js"></script> -->
+    <script src="./navSwitched.js"></script>
 </body>
-<script src="./navSwitched.js"></script>
 </html>

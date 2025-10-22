@@ -1,48 +1,50 @@
-
-//1) Tengo que agarrar el form del HTML y capturar los datos
-//2) Tengo que procesar y validar esos datos (inputs) si es que me da el tiempo (espero),
-//3) Tengo que mandar esos datos a apache y trabajarlos desde ahí para insertarlos en la BBDD con PHP
+//1) tengo que insertar el ID del usuario en la tabla envia
+//2) tengo que inserar el ID del SMS en la tabla envía
+//3) tengo que insertar el ID del proveedor,el texto y la hora (desde PHP) en la tabla sms
 
 import {sendHTTPrequest} from "../../loginAndRegister.js";
 
-const getParams=(string)=>{//obtengo los parametros de la URL
-    
+const getParams=async(string)=>{
+
+    //obtengo los parametros de la URL
     const params = new URLSearchParams(window.location.search);
     return params.get(string);
 
 }
 
-//obtengo el form y el submit del form
-const formSMS = document.getElementById("formSMS");
-// const button_sendMessage = document.getElementById("sendSMS")
+function generarIDCorto() {
+  const ahora = Date.now() % 1e6; // últimos 6 dígitos del timestamp
+  const random = Math.floor(Math.random() * 1e3); // 3 dígitos aleatorios (000–999)
+  const id = ahora * 1000 + random; // combinación
+
+  // Si se pasa de 9 dígitos, recortamos los primeros
+  return Number(String(id).slice(-9));
+}
 
 
-formSMS.addEventListener("submit",async(e)=>{//esta funcion envia el mensaje a apache y lo trabajon con PHP desde ahí
+
+const insertSMS=async()=>{
     
-    e.preventDefault();
-    
-    //agarro el input (el mensjae, texto)
-    const formData = new FormData(formSMS);
-    const message = formData.get("message");
+const idSMS = generarIDCorto();
+const idUser = getParams("idUser");
+const idService = getParams("idService");
 
-    const data = {
-        message,
-        CiCliente : getParams("CiCliente"), //no haría falta porque la tengo en la session PEEERO por si las dudas :)
-        CiProveedor : getParams("CiProveedor"),
-        IdServicio : getParams("IdService")
-    }
+const data = {
+    idSMS,
+    idUser,
+    idService
+}
 
-    const options = {
-        method : "POST",
-        headers : {"content-type" : "application/json"},
-        body : JSON.stringify(data)
-    }
+const options = {
 
-    const res = await sendHTTPrequest("./sendSMS.php",options);
-    const result = document.querySelector(".result");
-    result.innerHTML="Mensaje Enviado Correctamente!";
-    
+    method : "POST",
+    header : {"content-type" : "application/json"},
+    body : JSON.stringify(data)
+}
 
-})
+const result = sendHTTPrequest("./sendSMS.php",options);
 
+console.log(JSON.parse(result))
+
+}
 

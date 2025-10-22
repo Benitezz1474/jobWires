@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuda - TrabajoPlus</title>
+    <title>Ayuda - JobWires</title>
     <link rel="stylesheet" href="ayuda.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <h2 class="logo">
@@ -22,41 +21,36 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Centro de Ayuda</h1>
-            <p>Encuentra respuestas a tus preguntas y aprende a usar TrabajoPlus al máximo</p>
-            
-            <div class="search-help">
-                <input type="text" id="helpSearch" placeholder="Buscar en la ayuda..." class="help-search-input">
-                <button class="help-search-btn">🔍</button>
-            </div>
+        <h1>Centro de Ayuda</h1>
+        <p>Encuentra respuestas a tus preguntas y aprende a usar JobsWires al máximo</p>
+        <div class="search-help">
+            <input type="text" placeholder="Buscar en la ayuda..." class="help-search-input">
+            <button class="help-search-btn">🔍</button>
         </div>
     </section>
 
-    <!-- Quick Links -->
     <section class="quick-links">
         <div class="container">
-            <h2>Accesos Rápidos</h2>
-            <div class="quick-links-grid">
-                <div class="quick-link-card" onclick="scrollToSection('como-buscar')">
-                    <div class="quick-icon">🔍</div>
+            <h2 class="section-title">Accesos Rápidos</h2>
+            <div class="grid">
+                <div class="card" onclick="scrollToSection('como-buscar')">
+                    <div class="card-icon">🔍</div>
                     <h3>Cómo Buscar Trabajo</h3>
                     <p>Aprende a usar nuestro sistema de búsqueda</p>
                 </div>
-                <div class="quick-link-card" onclick="scrollToSection('crear-perfil')">
-                    <div class="quick-icon">👤</div>
+                <div class="card" onclick="scrollToSection('crear-perfil')">
+                    <div class="card-icon">👤</div>
                     <h3>Crear Perfil</h3>
                     <p>Guía para crear un perfil atractivo</p>
                 </div>
-                <div class="quick-link-card" onclick="scrollToSection('aplicar-empleos')">
-                    <div class="quick-icon">📝</div>
+                <div class="card" onclick="scrollToSection('aplicar-empleos')">
+                    <div class="card-icon">📝</div>
                     <h3>Aplicar a Empleos</h3>
                     <p>Proceso de aplicación paso a paso</p>
                 </div>
-                <div class="quick-link-card" onclick="scrollToSection('cuenta')">
-                    <div class="quick-icon">⚙️</div>
+                <div class="card" onclick="scrollToSection('cuenta')">
+                    <div class="card-icon">⚙️</div>
                     <h3>Gestión de Cuenta</h3>
                     <p>Administra tu cuenta y configuración</p>
                 </div>
@@ -64,22 +58,20 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2>Preguntas Frecuentes</h2>
+            <h2 class="section-title">Preguntas Frecuentes</h2>
             
-            <!-- Cómo buscar trabajo -->
             <div class="faq-category" id="como-buscar">
                 <h3>🔍 Cómo Buscar Trabajo</h3>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Cómo puedo buscar empleos en TrabajoPlus?</span>
+                        <span>¿Cómo puedo buscar empleos en JobsWires?</span>
                         <span class="faq-arrow">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Para buscar empleos en TrabajoPlus:</p>
+                        <p>Para buscar empleos en JobsWires:</p>
                         <ol>
                             <li>Ingresa palabras clave del trabajo que buscas en el campo "¿Qué trabajo buscas?"</li>
                             <li>Especifica la ubicación deseada en el campo "¿Dónde?"</li>
@@ -124,13 +116,12 @@
                 </div>
             </div>
 
-            <!-- Crear perfil -->
             <div class="faq-category" id="crear-perfil">
                 <h3>👤 Crear y Optimizar tu Perfil</h3>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Cómo creo mi perfil en TrabajoPlus?</span>
+                        <span>¿Cómo creo mi perfil en JobsWires?</span>
                         <span class="faq-arrow">▼</span>
                     </div>
                     <div class="faq-answer">
@@ -167,7 +158,6 @@
                 </div>
             </div>
 
-            <!-- Aplicar a empleos -->
             <div class="faq-category" id="aplicar-empleos">
                 <h3>📝 Aplicar a Empleos</h3>
                 
@@ -196,7 +186,7 @@
                         <span class="faq-arrow">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>¡Sí! Puedes aplicar a tantos empleos como desees. Recomendamos:</p>
+                        <p>Sí, puedes aplicar a tantos empleos como desees. Recomendamos:</p>
                         <ul>
                             <li>Aplicar solo a empleos que realmente te interesen</li>
                             <li>Personalizar cada aplicación</li>
@@ -207,7 +197,6 @@
                 </div>
             </div>
 
-            <!-- Gestión de cuenta -->
             <div class="faq-category" id="cuenta">
                 <h3>⚙️ Gestión de Cuenta</h3>
                 
@@ -249,55 +238,39 @@
         </div>
     </section>
 
-    <!-- Contact Support -->
     <section class="contact-support">
         <div class="container">
-            <h2>¿Necesitas más ayuda?</h2>
+            <h2 class="section-title">¿Necesitas más ayuda?</h2>
             <p>Si no encontraste la respuesta que buscabas, no dudes en contactarnos</p>
-            
-            <div class="support-options">
-                <div class="support-card">
-                    <div class="support-icon">💬</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">💬</div>
                     <h3>Chat en Vivo</h3>
-                    <p>Habla con nuestro equipo de soporte</p>
-                    <button class="support-btn" onclick="openChat()">Iniciar Chat</button>
+                    <p>Habla con nuestro equipo</p>
+                    <button class="support-btn">Iniciar Chat</button>
                 </div>
-                
-                <div class="support-card">
-                    <div class="support-icon">📧</div>
+                <div class="card">
+                    <div class="card-icon">📧</div>
                     <h3>Email</h3>
-                    <p>Envíanos un email detallado</p>
-                    <button class="support-btn" onclick="sendEmail()">Enviar Email</button>
+                    <p>Envíanos un email</p>
+                    <button class="support-btn">Enviar Email</button>
                 </div>
-                
-                <div class="support-card">
-                    <div class="support-icon">📞</div>
+                <div class="card">
+                    <div class="card-icon">📞</div>
                     <h3>Teléfono</h3>
                     <p>Llámanos directamente</p>
-                    <button class="support-btn" onclick="callSupport()">+598 99 123 456</button>
+                    <button class="support-btn">+598 99 123 456</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <h3>TrabajoPlus</h3>
-                <p>Tu plataforma de confianza para encontrar las mejores oportunidades laborales.</p>
-            </div>
-            
-            <div class="footer-links">
-                <a href="index.html">Inicio</a>
-                <a href="#">Términos de Uso</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="ayuda.html">Ayuda</a>
-                <a href="/CONTENT/BUSCAR/busca.html">Para Empresas</a>
-            </div>
-            
+        <div class="container">
+            <h3>JobsWires</h3>
+            <p>Tu plataforma de confianza para encontrar las mejores oportunidades laborales.</p>
             <div class="copyright">
-                <p>&copy; 2025 TrabajoPlus. Todos los derechos reservados.</p>
+                <p>&copy; 2025 JobsWires. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

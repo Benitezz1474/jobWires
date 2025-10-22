@@ -1,0 +1,315 @@
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: linear-gradient(180deg, #4A90E2 120px, #f5f5f5 120px);
+    border-radius: 20px;
+    max-width: 750px;
+    width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.modal-header {
+    padding: 35px 30px 20px;
+    text-align: center;
+}
+
+.modal-header h1 {
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 25px 30px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+}
+
+.modal-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-image {
+    display: none;
+}
+
+.service-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.service-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.service-section p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.proveedor-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.proveedor-avatar, .reseña-avatar {
+    background: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proveedor-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+}
+
+.proveedor-nombre {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.proveedor-exp {
+    color: #666;
+    font-size: 14px;
+}
+
+.reseñas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reseña-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.reseña-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.reseña-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.reseña-usuario {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.reseña-estrellas {
+    font-size: 14px;
+}
+
+.reseña-comentario {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 14px;
+}
+
+.modal-right {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 25px 0;
+    color: #333;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.info-label {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Botones */
+.btn-editar, .btn-estado-opcion, .btn-eliminar {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-editar {
+    background: #4A90E2;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.btn-editar:hover {
+    background: #357ABD;
+}
+
+.opciones-estado {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.btn-estado-opcion {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.btn-pendiente {
+    background: #FFA726;
+    color: white;
+}
+
+.btn-pendiente:hover {
+    background: #FB8C00;
+}
+
+.btn-confirmado {
+    background: #66BB6A;
+    color: white;
+}
+
+.btn-confirmado:hover {
+    background: #4CAF50;
+}
+
+.btn-finalizado {
+    background: #42A5F5;
+    color: white;
+}
+
+.btn-finalizado:hover {
+    background: #2196F3;
+}
+
+.btn-eliminar {
+    background: #EF5350;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn-eliminar:hover {
+    background: #E53935;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-right {
+        position: static;
+    }
+    
+    .modal-header h1 {
+        font-size: 28px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-content {
+        margin: 20px 0;
+    }
+}

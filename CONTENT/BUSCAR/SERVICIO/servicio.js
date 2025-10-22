@@ -13,16 +13,17 @@ const printService=(service)=>{
     const serviceDOM = document.getElementById("service"); //selecciono el DOM element
 
     const {Direccion,Titulo,Precio,Descripcion,Ubicacion,Imagen,FechaPublicacion} = service;
-    const TituloM = Titulo.toUpperCase();
+
     //plantilla del servicio
     serviceDOM.innerHTML = `
        
-    <h1>${TituloM}</h1>
-    <h3>Descripcion: ${Descripcion}</h3>
-    <h3>Ubicacion: ${Ubicacion}</h3>
-    <h3>Precio: $${Precio}</h3>
-    <h3>Fecha: ${FechaPublicacion}</h3>
-    <img src='${Imagen}' alt='${Titulo}' />
+    <h2>${Titulo}</h2>
+    <h3>Descripcion :${Descripcion}<h3>
+    <h3>ubicacion: ${Ubicacion}<h3>
+    <h3>Precion: ${Precio}<h3>
+    <h3>Fecha: ${FechaPublicacion}<h3>
+
+    <img src = '${Imagen}' />
     
 
 

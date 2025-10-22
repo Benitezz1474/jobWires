@@ -1,50 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mis Servicios - JobWires</title>
+     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="servicio.css">
     <link rel="stylesheet" href="../../../general.css">
     <link rel="stylesheet" href="../../../CONTENT/CONFIGURACIONES/configuraciones.css">
 </head>
 <body>
-
     <header class="header">
-    <nav class="nav">
-            <div class="logo">JobWires</div>
+        <nav class="nav">
+            <h2 class="logo">JobWires</h2>
             <ul class="nav-links">
-            <div id="btn_nav"></div>
-                 <li><a href="../../../index.html">Inicio</a></li>
-                 <li><a href="">Chat</a></li>
-                    <li id="navSelect"><a href="./CONFIGURACION/SERVICIOS/index.html" >Configuraciones</a></li>
+                <li><a href="../../../index.html">Inicio</a></li>
+                  <li><a href="../../../CONTENT/CHAT/index.html">Chat</a></li>
+                <li id="navSelect"><a href="./CONFIGURACION/SERVICIOS/index.html">Configuraciones</a></li>
             </ul>
         </nav>
-  </header>
+    </header>
 
-  <section>
-    <div class="subNav">
-        <nav>
-       <ul>
-         <li><a href="../USUARIO/index.html">Perfil</a></li>
-        <li id="subNavSelect"><a href="./SERVICIOS/index.html">Mi servicios</a></li>
-        <li><a href="../NOTIFICACION/index.html">Notificacion</a></li>
-        <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
-        <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
-          <li><a href="../PUBLICAR/idex.html">Publicar Servicio</a></li>
-        <li><a href="../SESION/index.html">Cerrar Sesion</a></li>
-       </ul>
-    </nav>
-    </div>
+    <section>
+        <div class="subNav">
+            <nav>
+                <ul>
+                    <li><a href="../USUARIO/index.html">Perfil</a></li>
+                    <li id="subNavSelect"><a href="./SERVICIOS/index.html">Mis servicios</a></li>
+                    <li><a href="../NOTIFICACION/index.html">Notificaciones</a></li>
+                    <li><a href="../SEGURIDAD/index.html">Seguridad</a></li>
+                    <li><a href="../PREFERENCIA/index.html">Preferencias</a></li>
+                    <li><a href="../PUBLICAR/index.html">Publicar Servicio</a></li>
+                    <li><a href="../SESION/index.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <div class="subContent">
-         
-        <!-- Con JS se renderizan los servicios -->
-        <div id="services"></div>
-    </div>
+        <div class="subContent">
+            <div class="header-content">
+                <h1>Mis servicios</h1>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Buscar" id="searchInput">
+                </div>
+            </div>
+            <div id="servicesContainer"></div>
+        </div>
+    </section>
 
-  </section>
-    
+    <script src="../../../navSwitched.js"></script>
+    <script src="servicio.js"></script>
+  <script src="modal.js"></script>
 </body>
-<script type="module" src="../../../navSwitched.js"></script>
-<script type="module" src="./getService.js"></script>
 </html>
