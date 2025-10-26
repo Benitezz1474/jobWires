@@ -1,7 +1,7 @@
 <?php 
 
 try{
-    $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
     $sql = "SELECT usuario.Nombre
             FROM usuario,proveedor,publicacion

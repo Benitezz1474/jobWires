@@ -9,7 +9,7 @@ $CI = $_SESSION["CI"] ?? 0;
 
 $message = "error";
 
-$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 // $sql = "SELECT * FROM cliente WHERE idCliente = ?";
 

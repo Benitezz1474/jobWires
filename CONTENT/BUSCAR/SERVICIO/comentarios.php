@@ -7,7 +7,7 @@ $message = null;
 
 
 //realizo la conexion a la BBDD
-$link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 $sql = " SELECT comentarios.texto AS comentarios
 FROM servicio, comentarios, servicioComentario

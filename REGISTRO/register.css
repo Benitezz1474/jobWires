@@ -1,358 +1,229 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-} */
-
-/* VARIABLES CSS */
-:root {
-  --primary-color: #667eea;
-  --primary-dark: #5a67d8;
-  --secondary-color: #4465c2;
-  --gradient-bg: linear-gradient(135deg, #667eea 0%, #0253ea 100%);
-  --text-primary: #2d3748;
-  --text-secondary: #718096;
-  --border-color: rgba(255,255,255,0.2);
-  --backdrop-blur: blur(20px);
-}
-
-/* BACKGROUND */
-body, html {
-  height: 100%;
-  background: var(--gradient-bg);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* FLOATING PARTICLES */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
-  z-index: 1;
-  pointer-events: none;
-}
-/* 
-/* HEADER 
-header {
-  width: 100%;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: var(--backdrop-blur);
-  -webkit-backdrop-filter: var(--backdrop-blur);
-  border-bottom: 1px solid var(--border-color);
-  color: white;
+/* Estilos generales para la página de registro */
+.registro-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #4f6fd6 50%, #5b7fe6 100%);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 40px;
-  position: relative;
-  z-index: 100;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 80px;
 }
 
-header h2 {
-  font-size: 1.5em;
-  font-weight: 700;
-  background: linear-gradient(45deg, #fff, #e2e8f0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul li a {
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-header nav ul li a:hover {
-  background: rgba(255,255,255,0.15);
-  transform: translateY(-2px);
-  color: white;
-} */
-
-/* Ocultar "Registrarse" en página de registro */
-
-
-/* body.registro-page .nav-registro {
-  display: none;
-} */
-
-/* SECTION Y FORMULARIO */
+/* Sección principal */
 section {
-  min-height: calc(100vh - 70px);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  position: relative;
-  z-index: 10;
 }
 
+/* Contenedor del formulario */
 .registro-form {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: var(--backdrop-blur);
-  -webkit-backdrop-filter: var(--backdrop-blur);
-  padding: 45px 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 50px 45px;
+  max-width: 500px;
   width: 100%;
-  max-width: 420px;
-  position: relative;
-  animation: slideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  transform: translateY(50px);
-  opacity: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@keyframes slideUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.registro-form::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
-}
-
+/* Título del formulario */
 .titulo-form {
-  font-size: 2em;
-  font-weight: 700;
-  margin-bottom: 30px;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
   text-align: center;
-  background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
 }
 
-.titulo-form::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  border-radius: 2px;
+/* Formulario */
+#formRegister {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
+/* Contenedor de inputs con labels flotantes */
 .input-box {
   position: relative;
-  margin-bottom: 22px;
+  width: 100%;
 }
 
-.input-box input {
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="password"] {
   width: 100%;
   padding: 16px 20px;
-  font-size: 1em;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid transparent;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  outline: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
-
-
-.input-box input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+.input-box input[type="text"]::placeholder,
+.input-box input[type="email"]::placeholder,
+.input-box input[type="password"]::placeholder {
+  color: transparent;
 }
 
-.input-box input:focus {
-  border-color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
+/* Label flotante */
 .input-box label {
   position: absolute;
   left: 20px;
-  top: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1em;
+  font-size: 16px;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.input-box input:focus + label,
-.input-box input:not(:placeholder-shown) + label {
+/* Cuando el input tiene focus o contenido */
+.input-box input[type="text"]:focus,
+.input-box input[type="email"]:focus,
+.input-box input[type="password"]:focus {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.input-box input[type="text"]:focus ~ label,
+.input-box input[type="email"]:focus ~ label,
+.input-box input[type="password"]:focus ~ label,
+.input-box input[type="text"]:not(:placeholder-shown) ~ label,
+.input-box input[type="email"]:not(:placeholder-shown) ~ label,
+.input-box input[type="password"]:not(:placeholder-shown) ~ label {
   top: -10px;
-  font-size: 0.75em;
-  color: white;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  padding: 4px 8px;
+  left: 15px;
+  font-size: 12px;
+  background: rgba(102, 126, 234, 0.9);
+  padding: 2px 8px;
   border-radius: 6px;
-  font-weight: 600;
+  color: white;
 }
 
-#registrarse {
+/* Checkbox personalizado */
+.input-box input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: white;
+}
+
+.input-box label[for="checkbox"] {
+  position: static;
+  transform: none;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline;
+}
+
+/* Botón de submit */
+.input-box input[type="submit"] {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: white;
+  color: #667eea;
   border: none;
   border-radius: 12px;
-  color: white;
-  font-size: 1.1em;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 8px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
-#registrarse::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.6s;
-}
-
-#registrarse:hover {
+.input-box input[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-#registrarse:hover::before {
-  left: 100%;
+.input-box input[type="submit"]:active {
+  transform: translateY(0);
 }
 
-#registrarse:active {
-  transform: translateY(-1px);
+/* Captcha */
+.h-captcha {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
 }
 
+/* Mensajes */
+.message {
+  margin: 20px 0;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+/* Grupo centrado (enlace) */
 .grupo-centrado {
   text-align: center;
-  margin-top: 22px;
+  margin-top: 25px;
 }
 
 .grupo-centrado a {
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 15px;
   transition: all 0.3s ease;
-  position: relative;
-  padding: 5px 0;
-}
-
-.grupo-centrado a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  opacity: 0.9;
 }
 
 .grupo-centrado a:hover {
-  color: white;
-}
-
-.grupo-centrado a:hover::after {
-  width: 100%;
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  header {
-    padding: 0 20px;
+  .registro-form {
+    padding: 40px 30px;
+    margin: 20px;
   }
-  
-  header nav ul {
-    gap: 20px;
+
+  .titulo-form {
+    font-size: 28px;
+  }
+
+  .input-box input[type="text"],
+  .input-box input[type="email"],
+  .input-box input[type="password"] {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .input-box input[type="submit"] {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
+  .registro-page {
+    padding-top: 60px;
+  }
+
   .registro-form {
-    padding: 35px 25px;
-    margin: 20px;
-    border-radius: 16px;
-    max-width: calc(100% - 40px);
+    padding: 30px 20px;
   }
-  
+
   .titulo-form {
-    font-size: 1.7em;
-    margin-bottom: 25px;
+    font-size: 24px;
+    margin-bottom: 30px;
   }
-  
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    text-align: center;
-    gap: 15px;
-  }
-  
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-  
-  header nav ul li {
-    width: 100%;
-  }
-  
-  header nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 12px 16px;
-  }
-  
-  .input-box input {
-    padding: 14px 18px;
-  }
-  
-  .input-box label {
-    left: 18px;
-    top: 14px;
+
+  #formRegister {
+    gap: 20px;
   }
 }

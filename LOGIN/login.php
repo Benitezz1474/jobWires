@@ -18,7 +18,7 @@ $message = [
 ];
 
      //coneixion a la base de datos y demas
-     $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
  $sql = "SELECT * FROM usuario WHERE Email = :em";
 

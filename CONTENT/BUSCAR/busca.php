@@ -15,7 +15,7 @@ $message = "error";
 
 try{
 //realizo la conexion a la BBDD
-$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 //creo la consulta con los filtros
 // $sql = "SELECT * FROM servicio WHERE titulo = :titulo AND Ubicacion = :Ubicacion";

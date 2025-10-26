@@ -47,7 +47,7 @@ function encryptMessage($message, $key) {
 
 $encryptedMessage = encryptMessage($message, $key); //mensaje encriptado
 
-$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 //debo insertar el SMS en la tabla de SMS de la BBDD;
 try{

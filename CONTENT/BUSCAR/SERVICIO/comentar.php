@@ -17,7 +17,7 @@ $id_service = $data["id_service"] ?? 0;
 $message = "error";
 
 //realizo la conexion a la BBDD
-$link = new PDO("mysql:host=localhost;dbname=proyecto","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 $sql_comentario = "INSERT INTO comentarios VALUES (?,?,?)";
 $stmt_comentario = $link->prepare($sql_comentario);

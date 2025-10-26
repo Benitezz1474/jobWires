@@ -25,7 +25,7 @@ $message = "null";
 try{
 
 
- $link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 //INSERTAR EN SERVICIO
 $sql = "INSERT INTO publicacion (Titulo,Descripcion,Precio,Ubicacion,FechaPublicacion,CiProveedor) VALUES 

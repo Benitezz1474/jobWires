@@ -1,5 +1,5 @@
-import {sessionVerify} from "../../sessionVerify.js";
-sessionVerify();
+// import {sessionVerify} from "../../sessionVerify.js";
+// sessionVerify();
 
 
 const filtersDOM = document.querySelector(".filters") //se hará el render de los filtros acá

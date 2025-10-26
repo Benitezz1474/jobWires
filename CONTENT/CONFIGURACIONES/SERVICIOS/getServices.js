@@ -23,7 +23,7 @@ const printServices=(services=[])=>{
         const button_show = document.createElement("button");
         button_show.innerHTML = "VER";
         button_show.addEventListener("click",()=>{
-            window.location.href = `http://localhost/jobsWebSite/CONTENT/BUSCAR/SERVICIO/index.html?id=${IdPublicacion}`;
+            window.location.href = `${window.location.origin}/CONTENT/BUSCAR/SERVICIO/index.html?id=${IdPublicacion}`;
         })
         
         //contenedor donde van a ir todos los items
@@ -40,7 +40,7 @@ const printServices=(services=[])=>{
         const button_message = document.createElement("button");
         button_message.innerHTML = "MESSAGE";
         button_message.addEventListener("click",()=>{
-            window.location.href = `http://localhost/jobsWebSite/CONTENT/CHAT/index.html?CiCliente=${CiCliente}&idService=${IdPublicacion}&CiProveedor=${CiProveedor}`;
+            window.location.href = `${window.location.origin}/CONTENT/CHAT/index.html?CiCliente=${CiCliente}&idService=${IdPublicacion}&CiProveedor=${CiProveedor}`;
         })
 
         //----------------------------------

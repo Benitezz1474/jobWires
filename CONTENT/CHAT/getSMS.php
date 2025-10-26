@@ -11,7 +11,7 @@ $CiCliente = $data["CiCliente"] ?? $_SESSION["CI"];
 // Esta es la clave del hash para utilizar en el openSSL
 $key = "12345678901234567890123456789012"; // 32 caracteres (256bits)
 
-$link = new PDO("mysql:host=localhost;dbname=proyectobd", "root", "admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 try {
     

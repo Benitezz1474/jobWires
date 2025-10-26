@@ -11,7 +11,7 @@ $message = [
 $idServicio = $data["id"];
 
 //realizo la conexion a la BBDD
-$link = new PDO("mysql:host=localhost;dbname=proyectobd","root","admin");
+ $link = new PDO("mysql:host=mariadb;dbname=proyectobd","root","admin");
 
 $sql = "SELECT * FROM publicacion WHERE IdPublicacion = ?";
 

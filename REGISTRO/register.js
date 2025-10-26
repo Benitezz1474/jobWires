@@ -1,8 +1,8 @@
-import {sessionVerify} from "../sessionVerify.js";
+// import {sessionVerify} from "../sessionVerify.js";
 import {sendHTTPrequest,printHTTPrequest} from "../loginAndRegister.js";
 
 //valido que no existan sesiones, si existen lo redirijo al inicio
-sessionVerify();
+// sessionVerify();
 
 const password_inputValue = document.getElementById("password");
 const password2_inputValue = document.getElementById("password2");
@@ -29,6 +29,12 @@ const passwordToEqual=(pass1,pass2)=>{ //verifica que las contaseñas sean igual
 password2_inputValue.addEventListener("keypress",(e)=>{ //se llama a esta funcion para validar las contraseñas
 
     passwordToEqual(password_inputValue.value,password2_inputValue.value) //se pasa el valor de ls inputs
+
+    //parche:
+    setInterval(()=>{
+            passwordToEqual(password_inputValue.value,password2_inputValue.value) //se pasa el valor de ls inputs
+
+    },100)
 });
 
 
